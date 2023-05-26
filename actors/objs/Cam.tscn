@@ -1,0 +1,7 @@
+[gd_scene load_steps=2 format=3 uid="uid://cla6a28v2emjg"]
+
+[ext_resource type="Script" path="res://actors/objs/Cam.gd" id="1_1upbk"]
+
+[node name="Cam" type="Camera2D"]
+position_smoothing_enabled = true
+script = ExtResource("1_1upbk")

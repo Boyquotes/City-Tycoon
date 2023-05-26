@@ -11,6 +11,7 @@ config_version=5
 [application]
 
 config/name="City Tycoon"
+run/main_scene="res://scenes/World.tscn"
 config/features=PackedStringArray("4.0", "Mobile")
 config/icon="res://icon.svg"
 
@@ -21,6 +22,7 @@ window/size/viewport_height=160
 window/size/window_width_override=1140
 window/size/window_height_override=540
 window/stretch/mode="canvas_items"
+window/stretch/aspect="keep_width"
 
 [input_devices]
 
