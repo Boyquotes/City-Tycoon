@@ -33,6 +33,7 @@ layer_2/tile_data = PackedInt32Array(-589824, 655361, 17, -524288, 655361, 18, -
 [node name="Selectable" parent="." instance=ExtResource("1_w7gjk")]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Selectable"]
+modulate = Color(1, 1, 1, 0)
 position = Vector2(55, -14)
 shape = SubResource("RectangleShape2D_rtyhv")
 
