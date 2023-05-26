@@ -25,7 +25,7 @@ animations = [{
 texture = ExtResource("1_j7nxk")
 centered = false
 region_enabled = true
-region_rect = Rect2(0, 16, 64, 48)
+region_rect = Rect2(64, 0, 32, 64)
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {
@@ -33,4 +33,5 @@ libraries = {
 }
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+visible = false
 sprite_frames = SubResource("SpriteFrames_40pd6")
