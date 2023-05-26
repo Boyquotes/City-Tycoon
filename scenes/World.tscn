@@ -1,12 +1,17 @@
-[gd_scene load_steps=6 format=3 uid="uid://ba4o62sjo1rlf"]
+[gd_scene load_steps=7 format=3 uid="uid://ba4o62sjo1rlf"]
 
 [ext_resource type="PackedScene" uid="uid://cla6a28v2emjg" path="res://actors/objs/Cam.tscn" id="1_52kn3"]
+[ext_resource type="PackedScene" uid="uid://cvf5r087rjhyb" path="res://scenes/UI.tscn" id="1_dvuxt"]
 [ext_resource type="TileSet" uid="uid://ci18tmka1tiyd" path="res://reso/tileset.tres" id="2_ahy61"]
 [ext_resource type="PackedScene" uid="uid://dg6y33ftbpi02" path="res://actors/objs/Building.tscn" id="3_hplhy"]
 [ext_resource type="PackedScene" uid="uid://ull62fb08pyt" path="res://actors/objs/BuildingGym.tscn" id="4_i3gkr"]
 [ext_resource type="PackedScene" uid="uid://ctltu0wk6unuo" path="res://actors/objs/Vehicle.tscn" id="5_15tj0"]
 
 [node name="World" type="Node2D"]
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="UI" parent="CanvasLayer" instance=ExtResource("1_dvuxt")]
 
 [node name="Cam" parent="." instance=ExtResource("1_52kn3")]
 position = Vector2(227, 137)

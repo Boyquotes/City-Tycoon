@@ -1,18 +1,18 @@
-[gd_scene load_steps=5 format=3 uid="uid://ull62fb08pyt"]
+[gd_scene load_steps=5 format=3 uid="uid://dc6q0hfgasemg"]
 
-[ext_resource type="Script" path="res://actors/objs/Building.gd" id="1_lwq5o"]
-[ext_resource type="TileSet" uid="uid://ci18tmka1tiyd" path="res://reso/tileset.tres" id="2_u25a3"]
-[ext_resource type="PackedScene" uid="uid://bks7cussp0sck" path="res://actors/components/Selectable.tscn" id="3_wowbq"]
+[ext_resource type="Script" path="res://actors/objs/Building.gd" id="1_g6j53"]
+[ext_resource type="TileSet" uid="uid://ci18tmka1tiyd" path="res://reso/tileset.tres" id="2_3t56u"]
+[ext_resource type="PackedScene" uid="uid://bks7cussp0sck" path="res://actors/components/Selectable.tscn" id="3_vtviy"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_rtyhv"]
 size = Vector2(98, 108)
 
-[node name="BuildingGym" type="Node2D"]
-script = ExtResource("1_lwq5o")
-store_name = "Fitness Gym"
+[node name="BuildingBakery" type="Node2D"]
+script = ExtResource("1_g6j53")
+store_name = "Bakery"
 
 [node name="TileMap" type="TileMap" parent="."]
-tile_set = ExtResource("2_u25a3")
+tile_set = ExtResource("2_3t56u")
 format = 2
 layer_0/name = "base"
 layer_0/tile_data = PackedInt32Array(-262144, 65537, 106, -196608, 65537, 107, -131072, 65537, 108, -65536, 65537, 109, -262143, 131073, 106, -196607, 131073, 107, -131071, 131073, 108, -65535, 131073, 109, -262142, 196609, 106, -196606, 196609, 107, -131070, 196609, 108, -65534, 196609, 109, -262141, 262145, 106, -196605, 262145, 107, -131069, 262145, 108, -65533, 262145, 109, -262140, 327681, 106, -196604, 327681, 107, -131068, 327681, 108, -65532, 327681, 109, -262139, 393217, 106, -196603, 393217, 107, -131067, 393217, 108, -65531, 393217, 109, -262138, 458753, 106, -196602, 458753, 107, -131066, 458753, 108, -65530, 458753, 109)
@@ -38,7 +38,7 @@ layer_3/y_sort_origin = 0
 layer_3/z_index = 0
 layer_3/tile_data = PackedInt32Array(-655359, 1703937, 100, -589823, 1703937, 101, -655358, 1769473, 100, -589822, 1769473, 101, -655357, 1835009, 100, -589821, 1835009, 101, -655356, 1900545, 100, -589820, 1900545, 101)
 
-[node name="Selectable" parent="." instance=ExtResource("3_wowbq")]
+[node name="Selectable" parent="." instance=ExtResource("3_vtviy")]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Selectable"]
 modulate = Color(1, 1, 1, 0)
