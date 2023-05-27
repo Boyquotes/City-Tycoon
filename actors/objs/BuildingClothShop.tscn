@@ -1,0 +1,47 @@
+[gd_scene load_steps=5 format=3 uid="uid://mdp2cvqkr3c1"]
+
+[ext_resource type="Script" path="res://actors/objs/Building.gd" id="1_pvogj"]
+[ext_resource type="TileSet" uid="uid://ci18tmka1tiyd" path="res://reso/tileset.tres" id="2_msy4y"]
+[ext_resource type="PackedScene" uid="uid://bks7cussp0sck" path="res://actors/components/Selectable.tscn" id="3_6l55c"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_rtyhv"]
+size = Vector2(98, 108)
+
+[node name="BuildingClothShop" type="Node2D"]
+script = ExtResource("1_pvogj")
+store_name = "Fitness Gym"
+
+[node name="TileMap" type="TileMap" parent="."]
+tile_set = ExtResource("2_msy4y")
+format = 2
+layer_0/name = "base"
+layer_1/name = "base_top"
+layer_1/enabled = true
+layer_1/modulate = Color(1, 1, 1, 1)
+layer_1/y_sort_enabled = false
+layer_1/y_sort_origin = 0
+layer_1/z_index = 0
+layer_1/tile_data = PackedInt32Array(0, 1638401, 121, 65536, 1638401, 122, 131072, 1638401, 123, 1, 1703937, 121, 65537, 1703937, 122, 131073, 1703937, 123, 2, 1769473, 121, 65538, 1769473, 122, 131074, 1769473, 123, 3, 1835009, 121, 65539, 1835009, 122, 131075, 1835009, 123, 4, 1900545, 121, 65540, 327681, 122, 131076, 327681, 123, 65541, 393217, 122, 131077, 393217, 123, 6, 1114113, 155, 65542, 458753, 122, 131078, 458753, 123, -131068, 983041, 153, 5, 393217, 121)
+layer_2/name = "top"
+layer_2/enabled = true
+layer_2/modulate = Color(1, 1, 1, 1)
+layer_2/y_sort_enabled = false
+layer_2/y_sort_origin = 0
+layer_2/z_index = 0
+layer_2/tile_data = PackedInt32Array(-393216, 655361, 99, -327680, 655361, 100, -393215, 720897, 99, -327679, 720897, 100, -393214, 786433, 99, -327678, 786433, 100, -393213, 851969, 99, -327677, 851969, 100, -393212, 917505, 99, -327676, 917505, 100, -393211, 983041, 99, -327675, 983041, 100, -393210, 1048577, 99, -327674, 1048577, 100, -262144, 655361, 101, -196608, 655361, 102, -131072, 655361, 103, -65536, 655361, 104, -262143, 720897, 101, -196607, 720897, 102, -131071, 720897, 103, -65535, 720897, 104, -262142, 786433, 101, -196606, 786433, 102, -131070, 786433, 103, -65534, 786433, 104, -262141, 851969, 101, -196605, 851969, 102, -131069, 851969, 103, -65533, 851969, 104, -262140, 917505, 101, -196604, 917505, 102, -131068, 917505, 103, -65532, 917505, 104, -262139, 983041, 101, -196603, 983041, 102, -131067, 983041, 103, -65531, 983041, 104, -262138, 1048577, 101, -196602, 1048577, 102, -131066, 1048577, 103, -65530, 1048577, 104)
+layer_3/name = "top_deco"
+layer_3/enabled = true
+layer_3/modulate = Color(1, 1, 1, 1)
+layer_3/y_sort_enabled = false
+layer_3/y_sort_origin = 0
+layer_3/z_index = 0
+layer_3/tile_data = PackedInt32Array()
+
+[node name="Selectable" parent="." instance=ExtResource("3_6l55c")]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Selectable"]
+modulate = Color(1, 1, 1, 0)
+position = Vector2(55, -14)
+shape = SubResource("RectangleShape2D_rtyhv")
+
+[editable path="Selectable"]

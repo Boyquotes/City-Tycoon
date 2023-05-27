@@ -1,0 +1,72 @@
+{
+	"shop_bakery":{
+		"name": "Bakery",
+		"id": "shop_bakery",
+		"level": 1,
+		"exp": 0,
+		"exp_max": 10,
+		"base_upgrades_increment": 1.5,
+		"upgrades": {
+			"improve": 0,
+			"staff": 0,
+			"efficiency": 0
+		},
+		"is_unlocked": true,
+	},
+	"shop_icecream":{
+		"name": "Ice Cream Shop",
+		"id": "shop_icecream",
+		"level": 1,
+		"exp": 0,
+		"exp_max": 10,
+		"base_upgrades_increment": 1.7,
+		"upgrades": {
+			"improve": 0,
+			"staff": 0,
+			"efficiency": 0
+		},
+		"is_unlocked": false,
+	},
+	"shop_clothes":{
+		"name": "Clothing Store",
+		"id": "shop_clothes",
+		"level": 1,
+		"exp": 0,
+		"exp_max": 10,
+		"base_upgrades_increment": 1.7,
+		"upgrades": {
+			"improve": 0,
+			"staff": 0,
+			"efficiency": 0
+		},
+		"is_unlocked": false,
+	},
+	"shop_meat":{
+		"name": "Meat Shop",
+		"id": "shop_meat",
+		"level": 1,
+		"exp": 0,
+		"exp_max": 10,
+		"base_upgrades_increment": 1.7,
+		"upgrades": {
+			"improve": 0,
+			"staff": 0,
+			"efficiency": 0
+		},
+		"is_unlocked": false,
+	},
+	"shop_gym":{
+		"name": "Meat Shop",
+		"id": "shop_gym",
+		"level": 1,
+		"exp": 0,
+		"exp_max": 10,
+		"base_upgrades_increment": 1.7,
+		"upgrades": {
+			"improve": 0,
+			"staff": 0,
+			"efficiency": 0
+		},
+		"is_unlocked": false,
+	}
+}
