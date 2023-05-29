@@ -1,5 +1,6 @@
 {
 	"shop_bakery":{
+		"price": 10000,
 		"name": "Bakery",
 		"id": "shop_bakery",
 		"level": 1,
@@ -14,6 +15,7 @@
 		"is_unlocked": true,
 	},
 	"shop_icecream":{
+		"price": 100000,
 		"name": "Ice Cream Shop",
 		"id": "shop_icecream",
 		"level": 1,
@@ -28,6 +30,7 @@
 		"is_unlocked": false,
 	},
 	"shop_clothes":{
+		"price": 2000000,
 		"name": "Clothing Store",
 		"id": "shop_clothes",
 		"level": 1,
@@ -42,6 +45,7 @@
 		"is_unlocked": false,
 	},
 	"shop_meat":{
+		"price": 50000000,
 		"name": "Meat Shop",
 		"id": "shop_meat",
 		"level": 1,
@@ -56,7 +60,8 @@
 		"is_unlocked": false,
 	},
 	"shop_gym":{
-		"name": "Meat Shop",
+		"price": 10000,
+		"name": "Fitness Gym",
 		"id": "shop_gym",
 		"level": 1,
 		"exp": 0,
