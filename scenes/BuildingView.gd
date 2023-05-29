@@ -27,6 +27,7 @@ func load_shop(data: Dictionary):
 	current_data = data
 	
 	get_node('%Name').text = data['name']
+	get_node('%Level').text = 'Level ' + str(data['level'])
 	
 	exp_bar.value = current_data['exp']
 	exp_bar.max_value = current_data['exp_max']
