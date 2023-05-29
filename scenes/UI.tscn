@@ -107,13 +107,15 @@ expand_mode = 1
 stretch_mode = 5
 
 [node name="EXPBar" type="ProgressBar" parent="BuildingView/Panel/VBoxContainer/HBoxContainer"]
+unique_name_in_owner = true
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 1
 value = 40.0
 show_percentage = false
 
-[node name="Label" type="Label" parent="BuildingView/Panel/VBoxContainer/HBoxContainer/EXPBar"]
+[node name="EXPLabel" type="Label" parent="BuildingView/Panel/VBoxContainer/HBoxContainer/EXPBar"]
+unique_name_in_owner = true
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -159,7 +161,7 @@ layout_mode = 2
 theme_override_font_sizes/font_size = 8
 text = "Increase profit for more income"
 
-[node name="Button" type="Button" parent="BuildingView/Panel/VBoxContainer/VBoxContainer/HBoxContainer"]
+[node name="BI" type="Button" parent="BuildingView/Panel/VBoxContainer/VBoxContainer/HBoxContainer"]
 custom_minimum_size = Vector2(100, 0)
 layout_mode = 2
 text = "999k"
@@ -189,7 +191,7 @@ layout_mode = 2
 theme_override_font_sizes/font_size = 8
 text = "Increase employee income and benefits"
 
-[node name="Button" type="Button" parent="BuildingView/Panel/VBoxContainer/VBoxContainer/HBoxContainer2"]
+[node name="EB" type="Button" parent="BuildingView/Panel/VBoxContainer/VBoxContainer/HBoxContainer2"]
 custom_minimum_size = Vector2(100, 0)
 layout_mode = 2
 text = "999k"
@@ -219,10 +221,13 @@ layout_mode = 2
 theme_override_font_sizes/font_size = 8
 text = "Effective marketing to transform paying customers"
 
-[node name="Button" type="Button" parent="BuildingView/Panel/VBoxContainer/VBoxContainer/HBoxContainer3"]
+[node name="M" type="Button" parent="BuildingView/Panel/VBoxContainer/VBoxContainer/HBoxContainer3"]
 custom_minimum_size = Vector2(100, 0)
 layout_mode = 2
 text = "999k"
 
 [connection signal="gui_input" from="BuildingView" to="BuildingView" method="_on_gui_input"]
 [connection signal="visibility_changed" from="BuildingView" to="BuildingView" method="_on_visibility_changed"]
+[connection signal="pressed" from="BuildingView/Panel/VBoxContainer/VBoxContainer/HBoxContainer/BI" to="BuildingView" method="_on_bi_pressed"]
+[connection signal="pressed" from="BuildingView/Panel/VBoxContainer/VBoxContainer/HBoxContainer2/EB" to="BuildingView" method="_on_eb_pressed"]
+[connection signal="pressed" from="BuildingView/Panel/VBoxContainer/VBoxContainer/HBoxContainer3/M" to="BuildingView" method="_on_m_pressed"]

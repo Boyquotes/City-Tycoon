@@ -44,12 +44,18 @@ func _ready():
 		var f = FileAccess.open("res://reso/data/shops.json", FileAccess.READ)
 		var j = JSON.new()
 		j.parse(f.get_as_text())
+		print(j.data)
 		player_data['shops_data'] = j.data
+
+
+func _notification(what):
+	if what == NOTIFICATION_WM_CLOSE_REQUEST:
+		save_game()
 
 
 func save_game():
 	var f = FileAccess.open(save_path, FileAccess.WRITE)
-	f.store_string(JSON.parse_string(player_data))
+	f.store_string(JSON.stringify(player_data))
 	f.close()
 
 

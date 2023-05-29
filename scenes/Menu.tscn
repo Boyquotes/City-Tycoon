@@ -48,6 +48,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+mouse_filter = 2
 color = Color(0, 0, 0, 0.2)
 
 [node name="Title" type="TextureRect" parent="."]
@@ -90,3 +91,5 @@ text = "Options"
 [node name="Button2" type="Button" parent="HBoxContainer"]
 layout_mode = 2
 text = "Credits"
+
+[connection signal="gui_input" from="." to="." method="_on_gui_input"]
