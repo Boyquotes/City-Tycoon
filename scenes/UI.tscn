@@ -223,3 +223,4 @@ layout_mode = 2
 text = "999k"
 
 [connection signal="gui_input" from="BuildingView" to="BuildingView" method="_on_gui_input"]
+[connection signal="visibility_changed" from="BuildingView" to="BuildingView" method="_on_visibility_changed"]
