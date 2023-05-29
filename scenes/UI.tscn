@@ -1,6 +1,7 @@
-[gd_scene load_steps=8 format=3 uid="uid://cvf5r087rjhyb"]
+[gd_scene load_steps=9 format=3 uid="uid://cvf5r087rjhyb"]
 
 [ext_resource type="Script" path="res://scenes/UI.gd" id="1_f1jnl"]
+[ext_resource type="Script" path="res://scenes/BuildingView.gd" id="2_2o3ve"]
 [ext_resource type="Texture2D" uid="uid://c51cu1guexhg4" path="res://assets/icons/up-arrow.png" id="2_6gg17"]
 [ext_resource type="Texture2D" uid="uid://c5rrffmn3uioo" path="res://assets/icons/bar-chart.png" id="3_irvke"]
 [ext_resource type="Texture2D" uid="uid://dxefyrrjmrq20" path="res://assets/icons/manager.png" id="4_b5c2b"]
@@ -40,15 +41,16 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("2_2o3ve")
 
 [node name="Panel" type="Panel" parent="BuildingView"]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = 196.0
+offset_left = 378.0
 offset_top = 42.0
-offset_right = -196.0
+offset_right = -14.0
 offset_bottom = -42.0
 grow_horizontal = 2
 grow_vertical = 2
@@ -219,3 +221,5 @@ text = "Effective marketing to transform paying customers"
 custom_minimum_size = Vector2(100, 0)
 layout_mode = 2
 text = "999k"
+
+[connection signal="gui_input" from="BuildingView" to="BuildingView" method="_on_gui_input"]

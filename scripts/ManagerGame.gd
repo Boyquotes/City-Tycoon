@@ -33,6 +33,7 @@ var player_data = {
 
 var global_world_ref
 var global_ui_ref
+var global_cam_ref
 
 
 

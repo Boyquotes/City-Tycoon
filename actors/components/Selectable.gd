@@ -10,4 +10,5 @@ func _ready():
 
 func _on_input_event(viewport, event, shape_idx):
 	if event is InputEventScreenTouch and !event.pressed:
-		pass
+		ManagerGame.global_ui_ref.show_building()
+		ManagerGame.global_cam_ref.snap_to(global_position)
