@@ -61,6 +61,12 @@ point_count = 2
 [node name="Cam" parent="." instance=ExtResource("1_52kn3")]
 position = Vector2(227, 137)
 
+[node name="TL" parent="Cam" index="0"]
+position = Vector2(-260, -184)
+
+[node name="BR" parent="Cam" index="1"]
+position = Vector2(820, 383)
+
 [node name="Sort" type="Node2D" parent="."]
 y_sort_enabled = true
 
@@ -136,3 +142,5 @@ curve = SubResource("Curve2D_xwr6p")
 [node name="Path2D8" type="Path2D" parent="Paths"]
 position = Vector2(0, 288)
 curve = SubResource("Curve2D_f141a")
+
+[editable path="Cam"]

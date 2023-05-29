@@ -4,11 +4,18 @@ extends Camera2D
 
 func _ready():
 	ManagerGame.global_cam_ref = self
-
+	
 
 func _unhandled_input(event):
 	if event is InputEventScreenDrag:
 		global_position += -event.relative
+
+
+func set_limits():
+	limit_bottom = $BR.global_position.y
+	limit_right = $BR.global_position.x
+	limit_left = $TL.global_position.x
+	limit_top = $TL.global_position.y
 
 
 func snap_to(g_pos: Vector2):

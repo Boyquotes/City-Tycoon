@@ -5,3 +5,7 @@
 [node name="Cam" type="Camera2D"]
 position_smoothing_enabled = true
 script = ExtResource("1_1upbk")
+
+[node name="TL" type="Node2D" parent="."]
+
+[node name="BR" type="Node2D" parent="."]
