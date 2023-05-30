@@ -8,27 +8,17 @@ extends Node
 # music
 # costume
 
-#var shop_base = {
-#	'name': 'Bakery',
-#	'id': 'shop_bakery',
-#	'level': 1,
-#	'exp': 0,
-#	'exp_max': 10,
-#	'base_upgrades_increment': 1.5,
-#	'upgrades': {
-#		'improve': 0,
-#		'staff': 0,
-#		'efficiency': 0
-#	},
-#	'is_unlocked': false,
-#}
+
+signal gold_changed
 
 
 var save_path = 'user://player_data.json'
 
 var player_data = {
 	'shops_data': {},
-	'gold': 120043
+	'gold': 120043,
+	'gpm': 0,
+	'gems': 0
 }
 
 
