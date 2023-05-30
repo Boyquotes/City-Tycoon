@@ -1,0 +1,9 @@
+[gd_resource type="Theme" load_steps=2 format=3 uid="uid://rlun1lt6dfw5"]
+
+[ext_resource type="FontFile" uid="uid://di756h130j504" path="res://reso/styles/Typo_Round_Regular_Demo.otf" id="1_a6rl4"]
+
+[resource]
+Button/font_sizes/font_size = 14
+Button/fonts/font = ExtResource("1_a6rl4")
+Label/font_sizes/font_size = 14
+Label/fonts/font = ExtResource("1_a6rl4")

@@ -66,9 +66,9 @@ anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 offset_left = 378.0
-offset_top = 45.0
+offset_top = 58.0
 offset_right = -14.0
-offset_bottom = -45.0
+offset_bottom = -58.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_jvosu")
@@ -259,7 +259,9 @@ anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 offset_left = 23.0
-offset_right = -23.0
+offset_top = 3.0
+offset_right = -23.0002
+offset_bottom = -2.0
 grow_horizontal = 2
 grow_vertical = 2
 
@@ -268,6 +270,7 @@ layout_mode = 2
 size_flags_horizontal = 3
 theme_override_styles/normal = SubResource("StyleBoxFlat_cmwg5")
 text = "10m/min"
+vertical_alignment = 1
 
 [node name="TextureRect" type="TextureRect" parent="HUD/HBoxContainer/Income"]
 layout_mode = 1
@@ -288,6 +291,7 @@ layout_mode = 2
 size_flags_horizontal = 3
 theme_override_styles/normal = SubResource("StyleBoxFlat_cmwg5")
 text = "10.4m"
+vertical_alignment = 1
 
 [node name="TextureRect" type="TextureRect" parent="HUD/HBoxContainer/Gold"]
 layout_mode = 1
@@ -308,6 +312,7 @@ layout_mode = 2
 size_flags_horizontal = 3
 theme_override_styles/normal = SubResource("StyleBoxFlat_cmwg5")
 text = "999"
+vertical_alignment = 1
 
 [node name="TextureRect" type="TextureRect" parent="HUD/HBoxContainer/Gems"]
 layout_mode = 1
