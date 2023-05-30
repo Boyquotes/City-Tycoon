@@ -68,7 +68,7 @@ func load_game():
 
 
 func int_to_currency(amount):
-	var s = ['K', 'M', 'B', 'T', 'Q']
+	var s = ['K', 'M', 'B', 'T', 'Q', 'A', 'AA', 'AAA', 'B', 'BB', 'BBB']
 	var st = str(int(amount))
 	var suffix = ''
 	

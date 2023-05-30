@@ -12,7 +12,7 @@ var current_data
 
 
 func _ready():
-	ManagerGame.gold_changed.connect(load_shop)
+	ManagerGame.gold_changed.connect(on_gold_changed)
 	
 	panel.pivot_offset = panel.size / 2
 
@@ -45,14 +45,7 @@ func load_shop(data = null):
 	eb.text = ManagerGame.int_to_currency(data['upgrades']['staff'])
 	m.text = ManagerGame.int_to_currency(data['upgrades']['efficiency'])
 	
-	var gold = ManagerGame.player_data['gold']
-	
-	if data['upgrades']['improve'] > gold:
-		bi.disabled = true
-	if data['upgrades']['staff'] > gold:
-		eb.disabled = true
-	if data['upgrades']['efficiency'] > gold:
-		m.disabled = true
+	on_gold_changed()
 
 
 func level_up_shop():
@@ -64,11 +57,26 @@ func level_up_shop():
 		current_data['exp'] = 0
 		current_data['exp_max'] += 10
 	
+	
+	
 	load_shop(current_data)
 
 
 func on_gold_changed():
-	pass
+	var gold = ManagerGame.player_data['gold']
+	
+	if current_data['upgrades']['improve'] > gold:
+		bi.disabled = true
+	else:
+		bi.disabled = false
+	if current_data['upgrades']['staff'] > gold:
+		eb.disabled = true
+	else:
+		eb.disabled = false
+	if current_data['upgrades']['efficiency'] > gold:
+		m.disabled = true
+	else:
+		m.disabled = false
 
 
 func _on_visibility_changed():
@@ -79,15 +87,24 @@ func _on_visibility_changed():
 
 
 func _on_bi_pressed():
+	ManagerGame.player_data['gold'] -= current_data['upgrades']['improve']
+	ManagerGame.gold_changed.emit()
+	
 	current_data['upgrades']['improve'] *= current_data['base_upgrades_increment']
 	level_up_shop()
 
 
 func _on_eb_pressed():
+	ManagerGame.player_data['gold'] -= current_data['upgrades']['staff']
+	ManagerGame.gold_changed.emit()
+	
 	current_data['upgrades']['staff'] *= current_data['base_upgrades_increment']
 	level_up_shop()
 
 
 func _on_m_pressed():
+	ManagerGame.player_data['gold'] -= current_data['upgrades']['efficiency']
+	ManagerGame.gold_changed.emit()
+	
 	current_data['upgrades']['efficiency'] *= current_data['base_upgrades_increment']
 	level_up_shop()
