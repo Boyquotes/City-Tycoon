@@ -10,6 +10,9 @@ extends Node
 
 
 signal gold_changed
+signal gpm_changed
+signal gems_changed
+signal profit_collected
 
 
 var save_path = 'user://player_data.json'
@@ -26,6 +29,7 @@ var global_world_ref
 var global_ui_ref
 var global_cam_ref
 
+var global_shops_ref = []
 
 
 func _ready():

@@ -17,6 +17,6 @@ func _ready():
 	else:
 		modulate = Color(1,1,1,.5)
 	
-	
+	ManagerGame.global_shops_ref.append(self)
 	
 	

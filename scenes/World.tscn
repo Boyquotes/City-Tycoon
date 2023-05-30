@@ -1,5 +1,6 @@
-[gd_scene load_steps=15 format=3 uid="uid://ba4o62sjo1rlf"]
+[gd_scene load_steps=16 format=3 uid="uid://ba4o62sjo1rlf"]
 
+[ext_resource type="Script" path="res://scenes/World.gd" id="1_44mnh"]
 [ext_resource type="PackedScene" uid="uid://cla6a28v2emjg" path="res://actors/objs/Cam.tscn" id="1_52kn3"]
 [ext_resource type="PackedScene" uid="uid://cvf5r087rjhyb" path="res://scenes/UI.tscn" id="1_dvuxt"]
 [ext_resource type="TileSet" uid="uid://ci18tmka1tiyd" path="res://reso/tileset.tres" id="2_ahy61"]
@@ -51,6 +52,7 @@ _data = {
 point_count = 2
 
 [node name="World" type="Node2D"]
+script = ExtResource("1_44mnh")
 
 [node name="CanvasModulate" type="CanvasModulate" parent="."]
 
@@ -142,5 +144,11 @@ curve = SubResource("Curve2D_xwr6p")
 [node name="Path2D8" type="Path2D" parent="Paths"]
 position = Vector2(0, 288)
 curve = SubResource("Curve2D_f141a")
+
+[node name="CollectionTimer" type="Timer" parent="."]
+wait_time = 5.0
+autostart = true
+
+[connection signal="timeout" from="CollectionTimer" to="." method="_on_collection_timer_timeout"]
 
 [editable path="Cam"]
