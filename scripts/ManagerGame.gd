@@ -48,7 +48,7 @@ func _ready():
 		for key in j.data:
 			j.data[key]['profits'] = j.data[key]['price'] * 2.5
 			for up in j.data[key]['upgrades']:
-				j.data[key]['upgrades'][up] = j.data[key]['price']
+				j.data[key]['upgrades'][up] = j.data[key]['price'] * 1.2
 		
 		player_data['shops_data'] = j.data
 
