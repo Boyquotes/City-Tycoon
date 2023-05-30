@@ -9,6 +9,14 @@ extends Node2D
 
 func _ready():
 	if ManagerGame.player_data['shops_data'][id]['is_unlocked']:
-		pass
+		var floater = load("res://actors/components/Collectible.tscn").instantiate()
+		floater.set_icon(id)
+		add_child(floater)
+		floater.position.x += 56
+		floater.position.y -= 32
 	else:
 		modulate = Color(1,1,1,.5)
+	
+	
+	
+	

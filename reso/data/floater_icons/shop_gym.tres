@@ -1,0 +1,6 @@
+[gd_resource type="CanvasTexture" load_steps=2 format=3 uid="uid://cwmlwdikquq5r"]
+
+[ext_resource type="Texture2D" uid="uid://bf6wjrhqdfqj7" path="res://assets/icons/floater/fitness.png" id="1_lajvg"]
+
+[resource]
+diffuse_texture = ExtResource("1_lajvg")

@@ -1,0 +1,6 @@
+[gd_resource type="CanvasTexture" load_steps=2 format=3 uid="uid://c2601cftakvyu"]
+
+[ext_resource type="Texture2D" uid="uid://cn3fflh04q0ro" path="res://assets/icons/burger.png" id="1_4xbk8"]
+
+[resource]
+diffuse_texture = ExtResource("1_4xbk8")

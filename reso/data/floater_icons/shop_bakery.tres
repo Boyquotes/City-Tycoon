@@ -1,0 +1,6 @@
+[gd_resource type="CanvasTexture" load_steps=2 format=3 uid="uid://qy0wq5beoy4v"]
+
+[ext_resource type="Texture2D" uid="uid://bacbdw22e7as7" path="res://assets/icons/floater/toast.png" id="1_gu1kt"]
+
+[resource]
+diffuse_texture = ExtResource("1_gu1kt")
