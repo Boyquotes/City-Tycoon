@@ -1,0 +1,21 @@
+[gd_scene load_steps=4 format=3 uid="uid://beus7jvakgwmq"]
+
+[ext_resource type="Script" path="res://actors/etc/NumberFloater.gd" id="1_tlw6o"]
+[ext_resource type="FontFile" uid="uid://dcampv481ilui" path="res://reso/styles/Typo_Round_Bold_Demo.otf" id="2_1fagt"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_i0r6q"]
+font = ExtResource("2_1fagt")
+font_size = 24
+
+[node name="NumberFloater" type="Node2D"]
+z_index = 70
+script = ExtResource("1_tlw6o")
+
+[node name="Label" type="Label" parent="."]
+offset_left = -65.0
+offset_top = -15.0
+offset_right = 67.0
+offset_bottom = 11.0
+text = "+999k"
+label_settings = SubResource("LabelSettings_i0r6q")
+horizontal_alignment = 1

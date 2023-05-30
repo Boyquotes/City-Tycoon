@@ -1,9 +1,6 @@
-[gd_scene load_steps=2 format=3 uid="uid://br0f2828ljy88"]
-
-[ext_resource type="Script" path="res://actors/objs/NumberFloater.gd" id="1_76w4b"]
+[gd_scene format=3 uid="uid://dy8jnuomgtfjv"]
 
 [node name="NumberFloater" type="Node2D"]
-script = ExtResource("1_76w4b")
 
 [node name="Label" type="Label" parent="."]
 offset_left = -27.0

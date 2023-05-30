@@ -28,7 +28,7 @@ func anim_panel():
 	t.tween_property(panel, 'scale', Vector2(1, 1), .3).set_trans(Tween.TRANS_BOUNCE).set_ease(Tween.EASE_OUT)
 
 
-func load_shop(data: Dictionary):
+func load_shop(data = null):
 	if data == null:
 		return
 	
