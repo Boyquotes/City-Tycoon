@@ -91,6 +91,7 @@ grow_vertical = 2
 texture = ExtResource("3_m21ei")
 expand_mode = 1
 stretch_mode = 5
+metadata/_edit_lock_ = true
 
 [node name="Label" type="Label" parent="."]
 layout_mode = 1
