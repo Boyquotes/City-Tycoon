@@ -15,8 +15,12 @@ func _ready():
 		floater.position.x += 56
 		floater.position.y -= 32
 	else:
-		modulate = Color(1,1,1,.5)
+		modulate = Color(.5,.5,.5,1)
 	
 	ManagerGame.global_shops_ref.append(self)
 	
 	
+
+
+func collect():
+	pass
