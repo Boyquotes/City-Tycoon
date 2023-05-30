@@ -51,6 +51,7 @@ func _on_visibility_changed():
 
 
 func _on_bi_pressed():
+	current_data['upgrades']['improve'] *= current_data['base_upgrades_increment']
 	level_up_shop()
 
 

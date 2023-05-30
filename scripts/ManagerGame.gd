@@ -44,7 +44,12 @@ func _ready():
 		var f = FileAccess.open("res://reso/data/shops.json", FileAccess.READ)
 		var j = JSON.new()
 		j.parse(f.get_as_text())
-		print(j.data)
+		
+		for key in j.data:
+			j.data[key]['profits'] = j.data[key]['price'] * 2.5
+			for up in j.data[key]['upgrades']:
+				j.data[key]['upgrades'][up] = j.data[key]['price']
+		
 		player_data['shops_data'] = j.data
 
 
