@@ -4,6 +4,9 @@ extends Control
 @onready var panel = $Panel
 @onready var exp_bar = get_node('%EXPBar')
 @onready var exp_label = get_node('%EXPLabel')
+@onready var bi = $Panel/VBoxContainer/VBoxContainer/HBoxContainer/BI
+@onready var eb = $Panel/VBoxContainer/VBoxContainer/HBoxContainer2/EB
+@onready var m = $Panel/VBoxContainer/VBoxContainer/HBoxContainer3/M
 
 var current_data
 
@@ -32,6 +35,10 @@ func load_shop(data: Dictionary):
 	exp_bar.value = current_data['exp']
 	exp_bar.max_value = current_data['exp_max']
 	exp_label.text = str(current_data['exp']) + '/' + str(current_data['exp_max'])
+	
+	bi.text = ManagerGame.int_to_currency(data['upgrades']['improve'])
+	eb.text = ManagerGame.int_to_currency(data['upgrades']['staff'])
+	m.text = ManagerGame.int_to_currency(data['upgrades']['efficiency'])
 
 
 func level_up_shop():
@@ -56,8 +63,10 @@ func _on_bi_pressed():
 
 
 func _on_eb_pressed():
+	current_data['upgrades']['staff'] *= current_data['base_upgrades_increment']
 	level_up_shop()
 
 
 func _on_m_pressed():
+	current_data['upgrades']['efficiency'] *= current_data['base_upgrades_increment']
 	level_up_shop()

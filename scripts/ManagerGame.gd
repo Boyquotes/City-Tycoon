@@ -48,7 +48,7 @@ func _ready():
 		for key in j.data:
 			j.data[key]['profits'] = j.data[key]['price'] * 2.5
 			for up in j.data[key]['upgrades']:
-				j.data[key]['upgrades'][up] = j.data[key]['price'] * 1.2
+				j.data[key]['upgrades'][up] = j.data[key]['price'] * .6
 		
 		player_data['shops_data'] = j.data
 
@@ -77,15 +77,15 @@ func int_to_currency(amount):
 	var suffix = s[floor((str(amount).length() / 3)) - 1]
 	var st = str(amount)
 	
-	if st.length() >= 4:
-		var ns = ''
-		var ro = st.length() / 3
-		
-		for i in range(ro):
-			ns += st[i]
-		
-		st = ns
-		st += suffix
+#	if st.length() >= 4:
+#		var ns = ''
+#		var ro = round(st.length() / 3)
+#
+#		for i in range(ro):
+#			ns += st[i]
+#
+#		st = ns
+#		st += suffix
 	
 	return st
 
