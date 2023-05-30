@@ -1,9 +1,17 @@
-[gd_resource type="Theme" load_steps=2 format=3 uid="uid://rlun1lt6dfw5"]
+[gd_resource type="Theme" load_steps=4 format=3 uid="uid://rlun1lt6dfw5"]
 
 [ext_resource type="FontFile" uid="uid://di756h130j504" path="res://reso/styles/Typo_Round_Regular_Demo.otf" id="1_a6rl4"]
+[ext_resource type="StyleBox" uid="uid://x472wi2mluon" path="res://reso/styles/button_green_disabled.tres" id="2_4mhjd"]
+[ext_resource type="StyleBox" uid="uid://cph6yubsujxj7" path="res://reso/styles/button_green_normal.tres" id="2_mdpfi"]
 
 [resource]
+Button/colors/font_color = Color(1, 1, 1, 1)
 Button/font_sizes/font_size = 14
 Button/fonts/font = ExtResource("1_a6rl4")
+Button/styles/disabled = ExtResource("2_4mhjd")
+Button/styles/focus = ExtResource("2_mdpfi")
+Button/styles/hover = ExtResource("2_mdpfi")
+Button/styles/normal = ExtResource("2_mdpfi")
+Button/styles/pressed = ExtResource("2_mdpfi")
 Label/font_sizes/font_size = 14
 Label/fonts/font = ExtResource("1_a6rl4")

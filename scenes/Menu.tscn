@@ -1,8 +1,15 @@
-[gd_scene load_steps=4 format=3 uid="uid://bwfs4q43slfgo"]
+[gd_scene load_steps=7 format=3 uid="uid://bwfs4q43slfgo"]
 
 [ext_resource type="Script" path="res://scenes/Menu.gd" id="1_7c5nm"]
 [ext_resource type="TileSet" uid="uid://ci18tmka1tiyd" path="res://reso/tileset.tres" id="2_dv2h8"]
 [ext_resource type="Texture2D" uid="uid://cw23f1dla1eh2" path="res://assets/city_tycoon_proto.png" id="3_m21ei"]
+[ext_resource type="Texture2D" uid="uid://cq5cpjpe3hk7c" path="res://assets/PhotoRoom-20230525_003201.png" id="3_vrxfi"]
+[ext_resource type="FontFile" uid="uid://dcampv481ilui" path="res://reso/styles/Typo_Round_Bold_Demo.otf" id="4_q1ep3"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_y08y6"]
+font_size = 20
+outline_size = 3
+outline_color = Color(0.145098, 0.145098, 0.145098, 1)
 
 [node name="Menu" type="Control"]
 layout_mode = 3
@@ -49,7 +56,23 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
-color = Color(0, 0, 0, 0.2)
+color = Color(0, 0, 0, 0)
+
+[node name="Char" type="TextureRect" parent="."]
+z_index = 1
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 1.0
+anchor_top = 1.003
+anchor_right = 1.0
+anchor_bottom = 1.003
+offset_left = -149.0
+offset_top = -169.96
+offset_right = 21.0
+offset_bottom = 0.039978
+texture = ExtResource("3_vrxfi")
+expand_mode = 1
+stretch_mode = 5
 
 [node name="Title" type="TextureRect" parent="."]
 z_index = 99
@@ -60,16 +83,34 @@ anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
 offset_left = -353.0
-offset_top = -233.0
+offset_top = -253.0
 offset_right = 353.0
-offset_bottom = 142.0
+offset_bottom = 122.0
 grow_horizontal = 2
 grow_vertical = 2
 texture = ExtResource("3_m21ei")
 expand_mode = 1
 stretch_mode = 5
 
+[node name="Label" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -54.0
+offset_top = 42.0
+offset_right = 54.0
+offset_bottom = 69.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Tap to play!"
+label_settings = SubResource("LabelSettings_y08y6")
+horizontal_alignment = 1
+
 [node name="HBoxContainer" type="HBoxContainer" parent="."]
+z_index = 2
 layout_mode = 1
 anchors_preset = 7
 anchor_left = 0.5
@@ -84,12 +125,54 @@ grow_horizontal = 2
 grow_vertical = 0
 alignment = 1
 
-[node name="Button" type="Button" parent="HBoxContainer"]
+[node name="Options" type="Button" parent="HBoxContainer"]
 layout_mode = 2
 text = "Options"
 
-[node name="Button2" type="Button" parent="HBoxContainer"]
+[node name="Credits" type="Button" parent="HBoxContainer"]
 layout_mode = 2
 text = "Credits"
+
+[node name="LinkButton" type="LinkButton" parent="."]
+z_index = 1
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -120.0
+offset_top = -26.0
+offset_right = -67.0
+offset_bottom = -5.0
+grow_horizontal = 0
+grow_vertical = 0
+theme_override_colors/font_color = Color(0.392157, 0.72549, 0.784314, 1)
+theme_override_constants/outline_size = 4
+theme_override_fonts/font = ExtResource("4_q1ep3")
+theme_override_font_sizes/font_size = 16
+text = "Twitter"
+uri = "https://twitter.com/Blueicecreama?t=lBoBUKDPtd6zo5fiY9GUZA&s=09"
+
+[node name="LinkButton2" type="LinkButton" parent="."]
+z_index = 1
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -60.0
+offset_top = -26.0
+offset_right = -10.0
+offset_bottom = -5.0
+grow_horizontal = 0
+grow_vertical = 0
+theme_override_colors/font_color = Color(0.552941, 0.411765, 0.784314, 1)
+theme_override_constants/outline_size = 4
+theme_override_fonts/font = ExtResource("4_q1ep3")
+theme_override_font_sizes/font_size = 16
+text = "Twitch"
+uri = "https://www.twitch.tv/cherrysayoko"
 
 [connection signal="gui_input" from="." to="." method="_on_gui_input"]
