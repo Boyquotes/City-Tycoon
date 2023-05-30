@@ -67,5 +67,21 @@ func load_game():
 	f.close()
 
 
+func int_to_currency(amount):
+	var s = ['K', 'M', 'B', 'T', 'Q']
+	var suffix = s[floor((str(amount).length() / 3)) - 1]
+	var st = str(amount)
+	
+	if st.length() >= 4:
+		var ns = ''
+		var ro = st.length() / 3
+		
+		for i in range(ro):
+			ns += st[i]
+		
+		st = ns
+		st += suffix
+	
+	return st
 
 
