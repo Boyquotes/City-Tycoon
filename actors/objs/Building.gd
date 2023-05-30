@@ -1,13 +1,13 @@
 extends Node2D
 
-@export var store_name = 'Ice Cream Shop'
 @export var id = 'shop_icecream'
-@export var level: int = 1
-@export var base_increment: float = 1.5
 
-
+var shop_data = null
 
 func _ready():
+	if ManagerGame.player_data['shops_data'].has(id):
+		shop_data = ManagerGame.player_data['shops_data'][id]
+	
 	if ManagerGame.player_data['shops_data'][id]['is_unlocked']:
 		var floater = load("res://actors/components/Collectible.tscn").instantiate()
 		floater.set_icon(id)
@@ -18,8 +18,6 @@ func _ready():
 		modulate = Color(.5,.5,.5,1)
 	
 	ManagerGame.global_shops_ref.append(self)
-	
-	
 
 
 func collect():

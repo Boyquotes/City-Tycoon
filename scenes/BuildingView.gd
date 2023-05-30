@@ -12,6 +12,8 @@ var current_data
 
 
 func _ready():
+	ManagerGame.gold_changed.connect(load_shop)
+	
 	panel.pivot_offset = panel.size / 2
 
 
@@ -27,6 +29,9 @@ func anim_panel():
 
 
 func load_shop(data: Dictionary):
+	if data == null:
+		return
+	
 	current_data = data
 	
 	get_node('%Name').text = data['name']
@@ -39,6 +44,15 @@ func load_shop(data: Dictionary):
 	bi.text = ManagerGame.int_to_currency(data['upgrades']['improve'])
 	eb.text = ManagerGame.int_to_currency(data['upgrades']['staff'])
 	m.text = ManagerGame.int_to_currency(data['upgrades']['efficiency'])
+	
+	var gold = ManagerGame.player_data['gold']
+	
+	if data['upgrades']['improve'] > gold:
+		bi.disabled = true
+	if data['upgrades']['staff'] > gold:
+		eb.disabled = true
+	if data['upgrades']['efficiency'] > gold:
+		m.disabled = true
 
 
 func level_up_shop():
@@ -53,8 +67,15 @@ func level_up_shop():
 	load_shop(current_data)
 
 
+func on_gold_changed():
+	pass
+
+
 func _on_visibility_changed():
 	anim_panel()
+	
+	if visible == false:
+		current_data = null
 
 
 func _on_bi_pressed():
