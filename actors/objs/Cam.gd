@@ -5,6 +5,8 @@ extends Camera2D
 func _ready():
 	ManagerGame.global_cam_ref = self
 	
+	set_limits()
+	
 
 func _unhandled_input(event):
 	if event is InputEventScreenDrag:
