@@ -27,7 +27,8 @@ extends Node
 var save_path = 'user://player_data.json'
 
 var player_data = {
-	'shops_data': {}
+	'shops_data': {},
+	'gold': 120043
 }
 
 
@@ -91,7 +92,6 @@ func int_to_currency(amount):
 			ns += st[0] + st[1] + st[2]
 		
 		for i in range(ro):
-			print(i)
 			ns += st[i]
 		
 		st = ns
