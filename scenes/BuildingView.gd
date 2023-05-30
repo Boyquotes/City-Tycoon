@@ -51,7 +51,7 @@ func load_shop(data = null):
 func level_up_shop():
 	current_data['level'] += 1
 	current_data['exp'] += 1
-	current_data['profits'] *= current_data['base_upgrades_increment']
+	current_data['profits'] *= 1.1
 	
 	if current_data['exp'] >= current_data['exp_max']:
 		current_data['exp'] = 0
@@ -63,6 +63,9 @@ func level_up_shop():
 
 
 func on_gold_changed():
+	if current_data == null:
+		return
+	
 	var gold = ManagerGame.player_data['gold']
 	
 	if current_data['upgrades']['improve'] > gold:
