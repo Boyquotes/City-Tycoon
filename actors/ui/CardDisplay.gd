@@ -17,11 +17,13 @@ func load_card(id):
 	if data['is_unlocked']:
 		$Icon.modulate = Color.WHITE
 		$Name.modulate = Color.WHITE
+		$EXP.show()
 		
 		ManagerGame.player_data['income_mult'] *= data['income_add']
 	else:
 		$Icon.modulate = Color.BLACK
 		$Name.modulate = Color.BLACK
+		$EXP.hide()
 	
 	$Icon.texture = load("res://assets/icons/cards/%s.png" % id)
 	$Name.text = ManagerGame.player_data['cards'][id]['name']

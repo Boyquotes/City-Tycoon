@@ -1,0 +1,163 @@
+[gd_scene load_steps=8 format=3 uid="uid://by30g5v37jpt6"]
+
+[ext_resource type="Script" path="res://actors/ui/popups/CardDraw.gd" id="1_nq78o"]
+[ext_resource type="StyleBox" uid="uid://ddw68yxxrelef" path="res://reso/styles/panel_purple_white_outine.tres" id="2_50uh8"]
+[ext_resource type="StyleBox" uid="uid://57y6dpsx2dfl" path="res://reso/styles/panel_blue_white_outine.tres" id="2_gv0a2"]
+[ext_resource type="FontFile" uid="uid://dcampv481ilui" path="res://reso/styles/Typo_Round_Bold_Demo.otf" id="3_6nfg0"]
+[ext_resource type="StyleBox" uid="uid://o4l5wiq57njy" path="res://reso/styles/panel_gold_white_outine.tres" id="3_ad7jq"]
+[ext_resource type="Texture2D" uid="uid://v4wf1fdk4lms" path="res://assets/icons/card-game (1).png" id="4_7akwx"]
+[ext_resource type="Texture2D" uid="uid://btda2157avdv3" path="res://assets/icons/ruby.png" id="5_bvedp"]
+
+[node name="CardDraw" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_nq78o")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+layer = 20
+
+[node name="WinControl" type="Control" parent="CanvasLayer"]
+visible = false
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="WinPanel" type="Panel" parent="CanvasLayer/WinControl"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 261.0
+offset_top = 45.0
+offset_right = -261.0
+offset_bottom = -46.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = ExtResource("2_50uh8")
+
+[node name="ScrollContainer" type="ScrollContainer" parent="CanvasLayer/WinControl/WinPanel"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 15.0
+offset_top = 13.0
+offset_right = -15.0
+offset_bottom = -14.0
+grow_horizontal = 2
+grow_vertical = 2
+horizontal_scroll_mode = 0
+
+[node name="GridContainer" type="GridContainer" parent="CanvasLayer/WinControl/WinPanel/ScrollContainer"]
+layout_mode = 2
+columns = 3
+
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+color = Color(0, 0, 0, 0.572549)
+
+[node name="Panel" type="Panel" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 243.0
+offset_top = 29.0
+offset_right = -243.0
+offset_bottom = -29.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = ExtResource("2_gv0a2")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Panel"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 16.0
+offset_top = 20.0
+offset_right = -16.0
+offset_bottom = -20.0
+grow_horizontal = 2
+grow_vertical = 2
+alignment = 1
+
+[node name="Label" type="Label" parent="Panel/VBoxContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("3_6nfg0")
+theme_override_font_sizes/font_size = 20
+text = "Chance to win:"
+horizontal_alignment = 1
+
+[node name="Panel" type="Panel" parent="Panel/VBoxContainer"]
+custom_minimum_size = Vector2(86, 86)
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_styles/panel = ExtResource("3_ad7jq")
+
+[node name="TextureRect" type="TextureRect" parent="Panel/VBoxContainer/Panel"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 7.0
+offset_top = 7.0
+offset_right = -7.0
+offset_bottom = -7.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("4_7akwx")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="GoldPerc" type="Label" parent="Panel/VBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 0.843137, 0, 1)
+text = "x99 Gold Cards"
+horizontal_alignment = 1
+
+[node name="RarePerc" type="Label" parent="Panel/VBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.854902, 0.533333, 0.898039, 1)
+text = "x99 Rare Cards"
+horizontal_alignment = 1
+
+[node name="CommonPerc" type="Label" parent="Panel/VBoxContainer"]
+layout_mode = 2
+text = "x99 Common Cards"
+horizontal_alignment = 1
+
+[node name="Buy" type="Button" parent="Panel/VBoxContainer"]
+layout_mode = 2
+text = "Buy 999"
+
+[node name="TextureRect" type="TextureRect" parent="Panel/VBoxContainer/Buy"]
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = 66.0
+offset_top = -10.0
+offset_right = 86.0
+offset_bottom = 10.0
+grow_vertical = 2
+texture = ExtResource("5_bvedp")
+expand_mode = 1
+stretch_mode = 5
+
+[connection signal="gui_input" from="." to="." method="_on_gui_input"]
+[connection signal="gui_input" from="CanvasLayer/WinControl" to="." method="_on_win_control_gui_input"]
+[connection signal="pressed" from="Panel/VBoxContainer/Buy" to="." method="_on_buy_pressed"]
