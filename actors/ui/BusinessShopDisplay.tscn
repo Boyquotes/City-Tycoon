@@ -50,6 +50,7 @@ text = "Bakery"
 custom_minimum_size = Vector2(140, 0)
 layout_mode = 2
 size_flags_vertical = 4
+focus_mode = 0
 text = "Buy 999M"
 
 [connection signal="pressed" from="HBoxContainer/Buy" to="." method="_on_buy_pressed"]

@@ -14,8 +14,12 @@ func _ready():
 		$HBoxContainer/Buy.disabled = true
 	else:
 		$HBoxContainer/Buy.disabled = false
-
+	
+	if ManagerGame.player_data['shops_data'][shop_id]['is_unlocked']:
+		$HBoxContainer/Buy.text = 'Unlocked'
+		$HBoxContainer/Buy.disabled = true
 
 
 func _on_buy_pressed():
-	pass # Replace with function body.
+	ManagerGame.player_data['shops_data'][shop_id]['is_unlocked'] = true
+	ManagerGame.shop_unlocked.emit(shop_id)

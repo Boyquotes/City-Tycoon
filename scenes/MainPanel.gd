@@ -5,6 +5,8 @@ extends Panel
 
 
 func _ready():
+	ManagerGame.shop_unlocked.connect(on_shop_unlocked)
+	
 	load_businesses()
 
 
@@ -21,6 +23,10 @@ func load_businesses():
 		d.shop_id = b
 		
 		business_list.add_child(d)
+
+
+func on_shop_unlocked(id):
+	hide()
 
 
 func _on_close_pressed():

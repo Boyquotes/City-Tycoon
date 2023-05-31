@@ -13,6 +13,7 @@ signal gold_changed
 signal gpm_changed
 signal gems_changed
 signal profit_collected
+signal shop_unlocked(shop_id)
 
 
 var save_path = 'user://player_data.json'

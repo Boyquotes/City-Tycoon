@@ -5,6 +5,8 @@ extends Node2D
 var shop_data = null
 
 func _ready():
+	ManagerGame.shop_unlocked.connect(on_shop_unlocked)
+	
 	if ManagerGame.player_data['shops_data'].has(id):
 		shop_data = ManagerGame.player_data['shops_data'][id]
 	
@@ -34,3 +36,7 @@ func collect():
 	
 	ManagerGame.player_data['gold'] += shop_data['profits']
 	ManagerGame.gold_changed.emit()
+
+
+func on_shop_unlocked(id: String):
+	pass
