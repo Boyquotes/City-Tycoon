@@ -1,4 +1,4 @@
-[gd_scene load_steps=22 format=3 uid="uid://cvf5r087rjhyb"]
+[gd_scene load_steps=24 format=3 uid="uid://cvf5r087rjhyb"]
 
 [ext_resource type="Script" path="res://scenes/UI.gd" id="1_f1jnl"]
 [ext_resource type="Script" path="res://scenes/BuildingView.gd" id="2_2o3ve"]
@@ -9,12 +9,13 @@
 [ext_resource type="Texture2D" uid="uid://b767vxhiafavh" path="res://assets/icons/network.png" id="5_mlpys"]
 [ext_resource type="Script" path="res://scenes/HUD.gd" id="7_gj7eq"]
 [ext_resource type="Texture2D" uid="uid://ciqa5h2axcg7j" path="res://assets/icons/coins.png" id="7_xdrbl"]
-[ext_resource type="Texture2D" uid="uid://ctmdcvwu74hhk" path="res://assets/icons/piggy-bank.png" id="8_yj4xw"]
+[ext_resource type="Texture2D" uid="uid://btda2157avdv3" path="res://assets/icons/ruby.png" id="10_lc3bi"]
 [ext_resource type="StyleBox" uid="uid://b5e8hysqn6tqo" path="res://reso/styles/button_gold_normal.tres" id="11_sij21"]
 [ext_resource type="Texture2D" uid="uid://duk6r3o64m25t" path="res://assets/icons/card-games.png" id="12_43lnx"]
 [ext_resource type="Texture2D" uid="uid://44klfix13qm0" path="res://assets/icons/trolley.png" id="13_gf567"]
 [ext_resource type="Texture2D" uid="uid://diw7c6evq10dn" path="res://assets/icons/multimedia.png" id="14_tvh0c"]
 [ext_resource type="PackedScene" uid="uid://lw125tkae8lt" path="res://actors/ui/CardDisplay.tscn" id="15_6rfeq"]
+[ext_resource type="StyleBox" uid="uid://57y6dpsx2dfl" path="res://reso/styles/panel_blue_white_outine.tres" id="16_n0u60"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_jvosu"]
 bg_color = Color(0.372549, 0.654902, 0.890196, 1)
@@ -57,6 +58,8 @@ bg_color = Color(0.148692, 0.416151, 0.734375, 1)
 corner_radius_bottom_right = 8
 corner_radius_bottom_left = 8
 
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_vvg7x"]
+
 [node name="UI" type="Control"]
 layout_mode = 3
 anchors_preset = 15
@@ -66,6 +69,8 @@ grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
 script = ExtResource("1_f1jnl")
+
+[node name="Popups" type="CanvasLayer" parent="."]
 
 [node name="BuildingView" type="Control" parent="."]
 visible = false
@@ -386,7 +391,7 @@ offset_top = -12.0
 offset_right = 23.0
 offset_bottom = 12.0
 grow_vertical = 2
-texture = ExtResource("8_yj4xw")
+texture = ExtResource("10_lc3bi")
 expand_mode = 1
 stretch_mode = 5
 
@@ -482,7 +487,6 @@ expand_mode = 1
 stretch_mode = 5
 
 [node name="MainPanel" type="Panel" parent="."]
-visible = false
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -503,8 +507,10 @@ offset_right = -6.0
 offset_bottom = -5.0
 grow_horizontal = 2
 grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxEmpty_vvg7x")
 
 [node name="Cards" type="TabBar" parent="MainPanel/TabContainer"]
+visible = false
 layout_mode = 2
 
 [node name="CenterContainer" type="CenterContainer" parent="MainPanel/TabContainer/Cards"]
@@ -541,9 +547,204 @@ id = "card_nicole"
 visible = false
 layout_mode = 2
 
-[node name="Finance" type="TabBar" parent="MainPanel/TabContainer"]
-visible = false
+[node name="ScrollContainer" type="ScrollContainer" parent="MainPanel/TabContainer/Shop"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 36.0
+offset_top = 4.0
+offset_right = -36.0
+offset_bottom = -4.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_stretch_ratio = 0.0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MainPanel/TabContainer/Shop/ScrollContainer"]
 layout_mode = 2
+size_flags_horizontal = 3
+alignment = 1
+
+[node name="GemsBox" type="VBoxContainer" parent="MainPanel/TabContainer/Shop/ScrollContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="MainPanel/TabContainer/Shop/ScrollContainer/VBoxContainer/GemsBox"]
+custom_minimum_size = Vector2(100, 0)
+layout_mode = 2
+size_flags_horizontal = 4
+text = "Gems"
+horizontal_alignment = 1
+
+[node name="CenterContainer" type="CenterContainer" parent="MainPanel/TabContainer/Shop/ScrollContainer/VBoxContainer/GemsBox"]
+layout_mode = 2
+
+[node name="HBoxContainer" type="GridContainer" parent="MainPanel/TabContainer/Shop/ScrollContainer/VBoxContainer/GemsBox/CenterContainer"]
+layout_mode = 2
+columns = 3
+
+[node name="Panel" type="Panel" parent="MainPanel/TabContainer/Shop/ScrollContainer/VBoxContainer/GemsBox/CenterContainer/HBoxContainer"]
+custom_minimum_size = Vector2(86, 98)
+layout_mode = 2
+
+[node name="Panel2" type="Panel" parent="MainPanel/TabContainer/Shop/ScrollContainer/VBoxContainer/GemsBox/CenterContainer/HBoxContainer"]
+custom_minimum_size = Vector2(86, 98)
+layout_mode = 2
+
+[node name="Panel3" type="Panel" parent="MainPanel/TabContainer/Shop/ScrollContainer/VBoxContainer/GemsBox/CenterContainer/HBoxContainer"]
+custom_minimum_size = Vector2(86, 98)
+layout_mode = 2
+
+[node name="Panel4" type="Panel" parent="MainPanel/TabContainer/Shop/ScrollContainer/VBoxContainer/GemsBox/CenterContainer/HBoxContainer"]
+custom_minimum_size = Vector2(86, 98)
+layout_mode = 2
+
+[node name="Panel5" type="Panel" parent="MainPanel/TabContainer/Shop/ScrollContainer/VBoxContainer/GemsBox/CenterContainer/HBoxContainer"]
+custom_minimum_size = Vector2(86, 98)
+layout_mode = 2
+
+[node name="GoldBox" type="VBoxContainer" parent="MainPanel/TabContainer/Shop/ScrollContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="MainPanel/TabContainer/Shop/ScrollContainer/VBoxContainer/GoldBox"]
+custom_minimum_size = Vector2(100, 0)
+layout_mode = 2
+size_flags_horizontal = 4
+text = "Gold"
+horizontal_alignment = 1
+
+[node name="CenterContainer" type="CenterContainer" parent="MainPanel/TabContainer/Shop/ScrollContainer/VBoxContainer/GoldBox"]
+layout_mode = 2
+
+[node name="HBoxContainer" type="GridContainer" parent="MainPanel/TabContainer/Shop/ScrollContainer/VBoxContainer/GoldBox/CenterContainer"]
+layout_mode = 2
+columns = 5
+
+[node name="Panel" type="Panel" parent="MainPanel/TabContainer/Shop/ScrollContainer/VBoxContainer/GoldBox/CenterContainer/HBoxContainer"]
+custom_minimum_size = Vector2(86, 98)
+layout_mode = 2
+
+[node name="Panel2" type="Panel" parent="MainPanel/TabContainer/Shop/ScrollContainer/VBoxContainer/GoldBox/CenterContainer/HBoxContainer"]
+custom_minimum_size = Vector2(86, 98)
+layout_mode = 2
+
+[node name="Panel3" type="Panel" parent="MainPanel/TabContainer/Shop/ScrollContainer/VBoxContainer/GoldBox/CenterContainer/HBoxContainer"]
+custom_minimum_size = Vector2(86, 98)
+layout_mode = 2
+
+[node name="CardsBox" type="VBoxContainer" parent="MainPanel/TabContainer/Shop/ScrollContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="MainPanel/TabContainer/Shop/ScrollContainer/VBoxContainer/CardsBox"]
+custom_minimum_size = Vector2(100, 0)
+layout_mode = 2
+size_flags_horizontal = 4
+text = "Cards"
+horizontal_alignment = 1
+
+[node name="CenterContainer" type="CenterContainer" parent="MainPanel/TabContainer/Shop/ScrollContainer/VBoxContainer/CardsBox"]
+layout_mode = 2
+
+[node name="HBoxContainer" type="GridContainer" parent="MainPanel/TabContainer/Shop/ScrollContainer/VBoxContainer/CardsBox/CenterContainer"]
+layout_mode = 2
+columns = 5
+
+[node name="Panel" type="Panel" parent="MainPanel/TabContainer/Shop/ScrollContainer/VBoxContainer/CardsBox/CenterContainer/HBoxContainer"]
+custom_minimum_size = Vector2(86, 98)
+layout_mode = 2
+
+[node name="Panel2" type="Panel" parent="MainPanel/TabContainer/Shop/ScrollContainer/VBoxContainer/CardsBox/CenterContainer/HBoxContainer"]
+custom_minimum_size = Vector2(86, 98)
+layout_mode = 2
+
+[node name="Panel3" type="Panel" parent="MainPanel/TabContainer/Shop/ScrollContainer/VBoxContainer/CardsBox/CenterContainer/HBoxContainer"]
+custom_minimum_size = Vector2(86, 98)
+layout_mode = 2
+
+[node name="Finance" type="TabBar" parent="MainPanel/TabContainer"]
+layout_mode = 2
+
+[node name="CenterContainer" type="CenterContainer" parent="MainPanel/TabContainer/Finance"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Panel" type="Panel" parent="MainPanel/TabContainer/Finance/CenterContainer"]
+custom_minimum_size = Vector2(280, 180)
+layout_mode = 2
+theme_override_styles/panel = ExtResource("16_n0u60")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MainPanel/TabContainer/Finance/CenterContainer/Panel"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 32
+alignment = 1
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MainPanel/TabContainer/Finance/CenterContainer/Panel/VBoxContainer"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="MainPanel/TabContainer/Finance/CenterContainer/Panel/VBoxContainer/VBoxContainer"]
+layout_mode = 2
+text = "---- Earn gold! ----"
+horizontal_alignment = 1
+
+[node name="Button" type="Button" parent="MainPanel/TabContainer/Finance/CenterContainer/Panel/VBoxContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_colors/font_outline_color = Color(0.741176, 0.796078, 0.243137, 1)
+theme_override_constants/outline_size = 4
+text = "Get +999M"
+
+[node name="TextureRect" type="TextureRect" parent="MainPanel/TabContainer/Finance/CenterContainer/Panel/VBoxContainer/VBoxContainer/Button"]
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = -18.0
+offset_top = -7.0
+offset_right = 10.0
+offset_bottom = 21.0
+grow_vertical = 2
+rotation = -0.307178
+texture = ExtResource("14_tvh0c")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="VBoxContainer2" type="VBoxContainer" parent="MainPanel/TabContainer/Finance/CenterContainer/Panel/VBoxContainer"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="MainPanel/TabContainer/Finance/CenterContainer/Panel/VBoxContainer/VBoxContainer2"]
+layout_mode = 2
+text = "---- Earn gems! ----"
+horizontal_alignment = 1
+
+[node name="Button" type="Button" parent="MainPanel/TabContainer/Finance/CenterContainer/Panel/VBoxContainer/VBoxContainer2"]
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_colors/font_outline_color = Color(0.796078, 0.360784, 0.396078, 1)
+theme_override_constants/outline_size = 4
+text = "Get +999M"
+
+[node name="TextureRect" type="TextureRect" parent="MainPanel/TabContainer/Finance/CenterContainer/Panel/VBoxContainer/VBoxContainer2/Button"]
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = -18.0
+offset_top = -7.0
+offset_right = 10.0
+offset_bottom = 21.0
+grow_vertical = 2
+rotation = -0.307178
+texture = ExtResource("10_lc3bi")
+expand_mode = 1
+stretch_mode = 5
 
 [connection signal="gui_input" from="BuildingView" to="BuildingView" method="_on_gui_input"]
 [connection signal="visibility_changed" from="BuildingView" to="BuildingView" method="_on_visibility_changed"]
