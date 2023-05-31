@@ -39,4 +39,5 @@ func collect():
 
 
 func on_shop_unlocked(id: String):
-	pass
+	if self.id == id:
+		modulate = Color(1,1,1,1)
