@@ -15,7 +15,6 @@ outline_color = Color(0.0901961, 0.0901961, 0.0901961, 1)
 [node name="CardDisplay" type="Panel"]
 clip_contents = true
 custom_minimum_size = Vector2(98, 124)
-mouse_filter = 2
 theme_override_styles/panel = ExtResource("1_ybdll")
 script = ExtResource("1_wtdx5")
 
@@ -51,3 +50,5 @@ theme_override_styles/normal = SubResource("StyleBoxFlat_7u21j")
 text = "Miguel"
 label_settings = SubResource("LabelSettings_ffyuo")
 horizontal_alignment = 1
+
+[connection signal="gui_input" from="." to="." method="_on_gui_input"]

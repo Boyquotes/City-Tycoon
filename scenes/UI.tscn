@@ -1,4 +1,4 @@
-[gd_scene load_steps=27 format=3 uid="uid://cvf5r087rjhyb"]
+[gd_scene load_steps=28 format=3 uid="uid://cvf5r087rjhyb"]
 
 [ext_resource type="Script" path="res://scenes/UI.gd" id="1_f1jnl"]
 [ext_resource type="Script" path="res://scenes/BuildingView.gd" id="2_2o3ve"]
@@ -62,6 +62,9 @@ corner_radius_bottom_right = 8
 corner_radius_bottom_left = 8
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_vvg7x"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_6djxe"]
+font = ExtResource("5_1nov5")
 
 [node name="UI" type="Control"]
 layout_mode = 3
@@ -529,12 +532,14 @@ layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
+offset_top = 16.0
 grow_horizontal = 2
 grow_vertical = 2
 
 [node name="VBoxContainer" type="VBoxContainer" parent="MainPanel/TabContainer/Cards/ScrollContainer"]
 layout_mode = 2
 size_flags_horizontal = 3
+theme_override_constants/separation = 32
 alignment = 1
 
 [node name="Gold" type="VBoxContainer" parent="MainPanel/TabContainer/Cards/ScrollContainer/VBoxContainer"]
@@ -544,6 +549,7 @@ layout_mode = 2
 [node name="Rarity" type="Label" parent="MainPanel/TabContainer/Cards/ScrollContainer/VBoxContainer/Gold"]
 layout_mode = 2
 text = "Gold Cards"
+label_settings = SubResource("LabelSettings_6djxe")
 horizontal_alignment = 1
 
 [node name="HBoxContainer" type="HBoxContainer" parent="MainPanel/TabContainer/Cards/ScrollContainer/VBoxContainer/Gold"]
@@ -557,6 +563,7 @@ layout_mode = 2
 [node name="Rarity" type="Label" parent="MainPanel/TabContainer/Cards/ScrollContainer/VBoxContainer/Rare"]
 layout_mode = 2
 text = "Rare Cards"
+label_settings = SubResource("LabelSettings_6djxe")
 horizontal_alignment = 1
 
 [node name="HBoxContainer" type="HBoxContainer" parent="MainPanel/TabContainer/Cards/ScrollContainer/VBoxContainer/Rare"]
@@ -569,7 +576,9 @@ layout_mode = 2
 
 [node name="Rarity" type="Label" parent="MainPanel/TabContainer/Cards/ScrollContainer/VBoxContainer/Common"]
 layout_mode = 2
+theme_override_fonts/font = ExtResource("5_1nov5")
 text = "Common Cards"
+label_settings = SubResource("LabelSettings_6djxe")
 horizontal_alignment = 1
 
 [node name="HBoxContainer" type="HBoxContainer" parent="MainPanel/TabContainer/Cards/ScrollContainer/VBoxContainer/Common"]

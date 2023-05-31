@@ -23,7 +23,8 @@ var player_data = {
 	'cards': {},
 	'gold': 120043,
 	'gpm': 0,
-	'gems': 0
+	'gems': 0,
+	'income_mult': 1.0
 }
 
 

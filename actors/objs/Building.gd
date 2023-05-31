@@ -29,7 +29,7 @@ func collect():
 	# the floater variable name here refers to the number that floats when the building
 	# gets a profit or earns money. idk why i like to use 'floater' for things like this man honestly lmao
 	var floater = load("res://actors/etc/NumberFloater.tscn").instantiate()
-	floater.set_label(ManagerGame.int_to_currency(shop_data['profits']))
+	floater.set_label(ManagerGame.int_to_currency(shop_data['profits'] * ManagerGame.player_data['income_mult']))
 	floater.position.x += 56
 	floater.position.y -= 32
 	add_child(floater)

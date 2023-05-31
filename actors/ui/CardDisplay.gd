@@ -17,9 +17,18 @@ func load_card(id):
 	if data['is_unlocked']:
 		$Icon.modulate = Color.WHITE
 		$Name.modulate = Color.WHITE
+		
+		ManagerGame.player_data['income_mult'] *= data['income_add']
 	else:
 		$Icon.modulate = Color.BLACK
 		$Name.modulate = Color.BLACK
 	
-#	$Icon.texture = load("res://assets/icons/cards/%s.png" % id)
+	$Icon.texture = load("res://assets/icons/cards/%s.png" % id)
 	$Name.text = ManagerGame.player_data['cards'][id]['name']
+
+
+func _on_gui_input(event):
+	if event is InputEventScreenTouch and !event.pressed and data['is_unlocked']:
+		var card_view = load("res://actors/ui/popups/CardView.tscn").instantiate()
+		card_view.display(data, id)
+		ManagerGame.global_ui_ref.pop_ui(card_view)
