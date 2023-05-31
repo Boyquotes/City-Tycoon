@@ -8,6 +8,10 @@ var rare_perc
 var common_perc
 
 
+func _ready():
+	$CanvasLayer/WinControl.pivot_offset = $CanvasLayer/WinControl.size / 2
+
+
 func display(price: int, id: String, perc_arr: Array):
 	$Panel/VBoxContainer/Buy.text = 'Buy ' + str(price)
 	
@@ -84,7 +88,10 @@ func roll():
 		d.get_node('Icon').texture = load("res://assets/icons/cards/%s.png" % w)
 		$CanvasLayer/WinControl/WinPanel/ScrollContainer/GridContainer.add_child(d)
 	
+	$CanvasLayer/WinControl.scale = Vector2.ZERO
 	$CanvasLayer/WinControl.show()
+	var t = create_tween()
+	t.tween_property($CanvasLayer/WinControl, 'scale', Vector2.ONE, .2).set_trans(Tween.TRANS_BACK).set_ease(Tween.EASE_OUT)
 
 
 func _on_gui_input(event):
