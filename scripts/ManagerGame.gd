@@ -19,6 +19,7 @@ var save_path = 'user://player_data.json'
 
 var player_data = {
 	'shops_data': {},
+	'cards': {},
 	'gold': 120043,
 	'gpm': 0,
 	'gems': 0
@@ -46,6 +47,10 @@ func _ready():
 				j.data[key]['upgrades'][up] = j.data[key]['price'] * .6
 		
 		player_data['shops_data'] = j.data
+		
+		f = FileAccess.open("res://reso/data/cards.json", FileAccess.READ)
+		j.parse(f.get_as_text())
+		player_data['cards'] = j.data
 
 
 func _notification(what):

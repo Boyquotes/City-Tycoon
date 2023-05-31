@@ -1,4 +1,4 @@
-[gd_scene load_steps=21 format=3 uid="uid://cvf5r087rjhyb"]
+[gd_scene load_steps=22 format=3 uid="uid://cvf5r087rjhyb"]
 
 [ext_resource type="Script" path="res://scenes/UI.gd" id="1_f1jnl"]
 [ext_resource type="Script" path="res://scenes/BuildingView.gd" id="2_2o3ve"]
@@ -14,6 +14,7 @@
 [ext_resource type="Texture2D" uid="uid://duk6r3o64m25t" path="res://assets/icons/card-games.png" id="12_43lnx"]
 [ext_resource type="Texture2D" uid="uid://44klfix13qm0" path="res://assets/icons/trolley.png" id="13_gf567"]
 [ext_resource type="Texture2D" uid="uid://diw7c6evq10dn" path="res://assets/icons/multimedia.png" id="14_tvh0c"]
+[ext_resource type="PackedScene" uid="uid://lw125tkae8lt" path="res://actors/ui/CardDisplay.tscn" id="15_6rfeq"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_jvosu"]
 bg_color = Color(0.372549, 0.654902, 0.890196, 1)
@@ -406,12 +407,13 @@ anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 offset_left = 17.0
-offset_top = 4.0
+offset_top = 5.0
 offset_right = -17.0
-offset_bottom = -4.0
+offset_bottom = -5.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_constants/separation = 20
+alignment = 1
 
 [node name="Cards" type="Button" parent="Stats/HBoxContainer"]
 layout_mode = 2
@@ -479,8 +481,75 @@ texture = ExtResource("14_tvh0c")
 expand_mode = 1
 stretch_mode = 5
 
+[node name="MainPanel" type="Panel" parent="."]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = 41.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_8214s")
+
+[node name="TabContainer" type="TabContainer" parent="MainPanel"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 6.0
+offset_top = 5.0
+offset_right = -6.0
+offset_bottom = -5.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Cards" type="TabBar" parent="MainPanel/TabContainer"]
+layout_mode = 2
+
+[node name="CenterContainer" type="CenterContainer" parent="MainPanel/TabContainer/Cards"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MainPanel/TabContainer/Cards/CenterContainer"]
+layout_mode = 2
+
+[node name="CardCategory" type="VBoxContainer" parent="MainPanel/TabContainer/Cards/CenterContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="Rarity" type="Label" parent="MainPanel/TabContainer/Cards/CenterContainer/VBoxContainer/CardCategory"]
+layout_mode = 2
+text = "Gold Cards"
+horizontal_alignment = 1
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MainPanel/TabContainer/Cards/CenterContainer/VBoxContainer/CardCategory"]
+layout_mode = 2
+
+[node name="CardDisplay" parent="MainPanel/TabContainer/Cards/CenterContainer/VBoxContainer/CardCategory/HBoxContainer" instance=ExtResource("15_6rfeq")]
+layout_mode = 2
+id = "card_miguel"
+
+[node name="CardDisplay2" parent="MainPanel/TabContainer/Cards/CenterContainer/VBoxContainer/CardCategory/HBoxContainer" instance=ExtResource("15_6rfeq")]
+layout_mode = 2
+id = "card_nicole"
+
+[node name="Shop" type="TabBar" parent="MainPanel/TabContainer"]
+visible = false
+layout_mode = 2
+
+[node name="Finance" type="TabBar" parent="MainPanel/TabContainer"]
+visible = false
+layout_mode = 2
+
 [connection signal="gui_input" from="BuildingView" to="BuildingView" method="_on_gui_input"]
 [connection signal="visibility_changed" from="BuildingView" to="BuildingView" method="_on_visibility_changed"]
 [connection signal="pressed" from="BuildingView/Panel/VBoxContainer/VBoxContainer/HBoxContainer/BI" to="BuildingView" method="_on_bi_pressed"]
 [connection signal="pressed" from="BuildingView/Panel/VBoxContainer/VBoxContainer/HBoxContainer2/EB" to="BuildingView" method="_on_eb_pressed"]
 [connection signal="pressed" from="BuildingView/Panel/VBoxContainer/VBoxContainer/HBoxContainer3/M" to="BuildingView" method="_on_m_pressed"]
+[connection signal="pressed" from="Stats/HBoxContainer/Cards" to="." method="_on_card_pressed" binds= [0]]
+[connection signal="pressed" from="Stats/HBoxContainer/Shop" to="." method="_on_card_pressed" binds= [1]]
+[connection signal="pressed" from="Stats/HBoxContainer/Ads" to="." method="_on_card_pressed" binds= [2]]

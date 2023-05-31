@@ -9,3 +9,7 @@ func _ready():
 func show_building(data: Dictionary):
 	$BuildingView.load_shop(data)
 	$BuildingView.show()
+
+
+func _on_card_pressed(extra_arg_0):
+	$MainPanel.show()

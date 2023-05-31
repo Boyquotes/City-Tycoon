@@ -1,0 +1,17 @@
+{
+	"card_miguel": {
+		"rarity": "gold",
+		"name": "Miguel",
+		"income_add": "3.0",
+	},
+	"card_nicole": {
+		"rarity": "gold",
+		"name": "Nicole",
+		"income_add": "3.0",
+	},
+	"card_3": {
+		"rarity": "rare",
+		"name": "Nova",
+		"income_add": "2.1",
+	},
+}
