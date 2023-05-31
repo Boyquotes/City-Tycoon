@@ -8,5 +8,5 @@ extends Panel
 
 func _ready():
 	$Icon.texture = load("res://assets/icons/%s.png" % id)
-	$Price.text = '$' + str(price)
+	$Price.text = '$' + str(price).replace('.', ',')
 	$Name.text = item_name
