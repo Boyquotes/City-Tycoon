@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=3 uid="uid://cvf5r087rjhyb"]
+[gd_scene load_steps=21 format=3 uid="uid://cvf5r087rjhyb"]
 
 [ext_resource type="Script" path="res://scenes/UI.gd" id="1_f1jnl"]
 [ext_resource type="Script" path="res://scenes/BuildingView.gd" id="2_2o3ve"]
@@ -10,6 +10,10 @@
 [ext_resource type="Script" path="res://scenes/HUD.gd" id="7_gj7eq"]
 [ext_resource type="Texture2D" uid="uid://ciqa5h2axcg7j" path="res://assets/icons/coins.png" id="7_xdrbl"]
 [ext_resource type="Texture2D" uid="uid://ctmdcvwu74hhk" path="res://assets/icons/piggy-bank.png" id="8_yj4xw"]
+[ext_resource type="StyleBox" uid="uid://b5e8hysqn6tqo" path="res://reso/styles/button_gold_normal.tres" id="11_sij21"]
+[ext_resource type="Texture2D" uid="uid://duk6r3o64m25t" path="res://assets/icons/card-games.png" id="12_43lnx"]
+[ext_resource type="Texture2D" uid="uid://44klfix13qm0" path="res://assets/icons/trolley.png" id="13_gf567"]
+[ext_resource type="Texture2D" uid="uid://diw7c6evq10dn" path="res://assets/icons/multimedia.png" id="14_tvh0c"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_jvosu"]
 bg_color = Color(0.372549, 0.654902, 0.890196, 1)
@@ -44,6 +48,11 @@ content_margin_right = 12.0
 bg_color = Color(0.0470588, 0.0823529, 0.164706, 0.721569)
 corner_radius_top_left = 8
 corner_radius_top_right = 8
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 8
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_l0uye"]
+bg_color = Color(0.148692, 0.416151, 0.734375, 1)
 corner_radius_bottom_right = 8
 corner_radius_bottom_left = 8
 
@@ -374,6 +383,96 @@ offset_right = 23.0
 offset_bottom = 12.0
 grow_vertical = 2
 texture = ExtResource("8_yj4xw")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="Stats" type="Panel" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.619947
+anchor_right = 1.0
+offset_left = -0.160034
+offset_bottom = 40.0
+grow_horizontal = 0
+theme_override_styles/panel = SubResource("StyleBoxFlat_l0uye")
+metadata/_edit_use_anchors_ = true
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Stats"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 17.0
+offset_top = 4.0
+offset_right = -17.0
+offset_bottom = -4.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 20
+
+[node name="Cards" type="Button" parent="Stats/HBoxContainer"]
+layout_mode = 2
+theme_override_styles/normal = ExtResource("11_sij21")
+theme_override_styles/hover = ExtResource("11_sij21")
+theme_override_styles/pressed = ExtResource("11_sij21")
+theme_override_styles/focus = ExtResource("11_sij21")
+text = "Cards"
+
+[node name="TextureRect" type="TextureRect" parent="Stats/HBoxContainer/Cards"]
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = -10.0
+offset_top = -16.0
+offset_right = 22.0
+offset_bottom = 16.0
+grow_vertical = 2
+texture = ExtResource("12_43lnx")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="Shop" type="Button" parent="Stats/HBoxContainer"]
+layout_mode = 2
+theme_override_styles/normal = ExtResource("11_sij21")
+theme_override_styles/hover = ExtResource("11_sij21")
+theme_override_styles/pressed = ExtResource("11_sij21")
+theme_override_styles/focus = ExtResource("11_sij21")
+text = "Shop"
+
+[node name="TextureRect" type="TextureRect" parent="Stats/HBoxContainer/Shop"]
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = -10.0
+offset_top = -16.0
+offset_right = 22.0
+offset_bottom = 16.0
+grow_vertical = 2
+texture = ExtResource("13_gf567")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="Ads" type="Button" parent="Stats/HBoxContainer"]
+layout_mode = 2
+theme_override_styles/normal = ExtResource("11_sij21")
+theme_override_styles/hover = ExtResource("11_sij21")
+theme_override_styles/pressed = ExtResource("11_sij21")
+theme_override_styles/focus = ExtResource("11_sij21")
+text = "Ads"
+
+[node name="TextureRect" type="TextureRect" parent="Stats/HBoxContainer/Ads"]
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = -10.0
+offset_top = -16.0
+offset_right = 22.0
+offset_bottom = 16.0
+grow_vertical = 2
+texture = ExtResource("14_tvh0c")
 expand_mode = 1
 stretch_mode = 5
 
