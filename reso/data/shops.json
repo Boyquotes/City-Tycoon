@@ -13,10 +13,10 @@
 			"efficiency": 0
 		},
 		"is_unlocked": true,
-		"profits": 10000,
+		"profits": 3000,
 	},
 	"shop_icecream":{
-		"price": 100000,
+		"price": 300000,
 		"name": "Ice Cream Shop",
 		"id": "shop_icecream",
 		"level": 1,
@@ -29,7 +29,7 @@
 			"efficiency": 0
 		},
 		"is_unlocked": false,
-		"profits": 105000,
+		"profits": 40000,
 	},
 	"shop_clothes":{
 		"price": 2000000,
@@ -45,7 +45,7 @@
 			"efficiency": 0
 		},
 		"is_unlocked": false,
-		"profits": 10234000,
+		"profits": 100000,
 	},
 	"shop_meat":{
 		"price": 50000000,
@@ -61,10 +61,10 @@
 			"efficiency": 0
 		},
 		"is_unlocked": false,
-		"profits": 2450000,
+		"profits": 1200000,
 	},
 	"shop_gym":{
-		"price": 10000,
+		"price": 100000000,
 		"name": "Fitness Gym",
 		"id": "shop_gym",
 		"level": 1,
@@ -77,6 +77,6 @@
 			"efficiency": 0
 		},
 		"is_unlocked": false,
-		"profits": 34565462,
+		"profits": 3500000,
 	}
 }

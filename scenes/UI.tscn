@@ -1,4 +1,4 @@
-[gd_scene load_steps=27 format=3 uid="uid://cvf5r087rjhyb"]
+[gd_scene load_steps=28 format=3 uid="uid://cvf5r087rjhyb"]
 
 [ext_resource type="Script" path="res://scenes/UI.gd" id="1_f1jnl"]
 [ext_resource type="Script" path="res://scenes/BuildingView.gd" id="2_2o3ve"]
@@ -15,6 +15,7 @@
 [ext_resource type="Texture2D" uid="uid://44klfix13qm0" path="res://assets/icons/trolley.png" id="13_gf567"]
 [ext_resource type="Texture2D" uid="uid://diw7c6evq10dn" path="res://assets/icons/multimedia.png" id="14_tvh0c"]
 [ext_resource type="PackedScene" uid="uid://lw125tkae8lt" path="res://actors/ui/CardDisplay.tscn" id="15_6rfeq"]
+[ext_resource type="Script" path="res://scenes/MainPanel.gd" id="15_kmjf2"]
 [ext_resource type="PackedScene" uid="uid://cy2ogwf1uwlqd" path="res://actors/ui/GemShopDisplay.tscn" id="16_3bcop"]
 [ext_resource type="StyleBox" uid="uid://57y6dpsx2dfl" path="res://reso/styles/panel_blue_white_outine.tres" id="16_n0u60"]
 [ext_resource type="PackedScene" uid="uid://6krbyku126xc" path="res://actors/ui/GoldShopDisplay.tscn" id="17_v7vke"]
@@ -72,6 +73,7 @@ grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
 script = ExtResource("1_f1jnl")
+metadata/_edit_vertical_guides_ = []
 
 [node name="Popups" type="CanvasLayer" parent="."]
 
@@ -111,6 +113,12 @@ grow_horizontal = 2
 grow_vertical = 2
 theme_override_constants/separation = 16
 alignment = 1
+
+[node name="Warning" type="Label" parent="BuildingView/Panel/VBoxContainer"]
+visible = false
+layout_mode = 2
+text = "You need to buy this business first to access upgrades,
+Go to Business Tab for more,"
 
 [node name="HBoxContainer" type="HBoxContainer" parent="BuildingView/Panel/VBoxContainer"]
 layout_mode = 2
@@ -498,6 +506,7 @@ offset_top = 41.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_8214s")
+script = ExtResource("15_kmjf2")
 
 [node name="TabContainer" type="TabContainer" parent="MainPanel"]
 layout_mode = 1
@@ -513,7 +522,6 @@ grow_vertical = 2
 theme_override_styles/panel = SubResource("StyleBoxEmpty_vvg7x")
 
 [node name="Cards" type="TabBar" parent="MainPanel/TabContainer"]
-visible = false
 layout_mode = 2
 
 [node name="CenterContainer" type="CenterContainer" parent="MainPanel/TabContainer/Cards"]
@@ -658,6 +666,7 @@ custom_minimum_size = Vector2(86, 98)
 layout_mode = 2
 
 [node name="Finance" type="TabBar" parent="MainPanel/TabContainer"]
+visible = false
 layout_mode = 2
 
 [node name="CenterContainer" type="CenterContainer" parent="MainPanel/TabContainer/Finance"]
@@ -747,6 +756,27 @@ rotation = -0.307178
 texture = ExtResource("10_lc3bi")
 expand_mode = 1
 stretch_mode = 5
+
+[node name="Business" type="TabBar" parent="MainPanel/TabContainer"]
+visible = false
+layout_mode = 2
+
+[node name="ScrollContainer" type="ScrollContainer" parent="MainPanel/TabContainer/Business"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 6.0
+offset_top = 10.0
+offset_right = -86.0
+offset_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="BusinessList" type="VBoxContainer" parent="MainPanel/TabContainer/Business/ScrollContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
 
 [connection signal="gui_input" from="BuildingView" to="BuildingView" method="_on_gui_input"]
 [connection signal="visibility_changed" from="BuildingView" to="BuildingView" method="_on_visibility_changed"]

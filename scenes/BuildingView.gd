@@ -35,9 +35,11 @@ func load_shop(data = null):
 	if data['is_unlocked'] == false:
 		get_node('%Name').text = data['name'] + '(Locked)'
 		$Panel/VBoxContainer/VBoxContainer.hide()
+		$Panel/VBoxContainer/Warning.show()
 		return
 	else:
 		$Panel/VBoxContainer/VBoxContainer.show()
+		$Panel/VBoxContainer/Warning.hide()
 	
 	current_data = data
 	
