@@ -19,7 +19,7 @@ func load_card(id):
 		$Name.modulate = Color.WHITE
 		$EXP.show()
 		
-#		ManagerGame.player_data['income_mult'] *= data['income_add']
+		ManagerGame.player_data['income_mult'] += data['income_add']
 	else:
 		$Icon.modulate = Color.BLACK
 		$Name.modulate = Color.BLACK

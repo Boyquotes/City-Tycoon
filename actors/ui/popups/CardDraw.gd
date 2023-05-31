@@ -95,6 +95,8 @@ func roll():
 		while ManagerGame.player_data['cards'][w]['exp'] >= ManagerGame.player_data['cards'][w]['exp_max']:
 			ManagerGame.player_data['cards'][w]['exp'] = ManagerGame.player_data['cards'][w]['exp'] - ManagerGame.player_data['cards'][w]['exp_max']
 			ManagerGame.player_data['cards'][w]['exp_max'] += 10
+			
+			ManagerGame.player_data['cards'][w]['income_add'] *= 1.5
 	
 	ManagerGame.global_ui_ref.refresh_cards()
 	

@@ -30,6 +30,11 @@ func load_businesses():
 
 
 func clear_cards():
+	# since income mult is only affected by cards
+	# we can just do this shit here or else, we would keep
+	# accumulating income_mult everytime we reload/re-instance CardDisplay.tscn
+	ManagerGame.player_data['income_mult'] = 1.0
+	
 	for child in gold_card_list.get_children():
 		child.queue_free()
 	for child in rare_card_list.get_children():

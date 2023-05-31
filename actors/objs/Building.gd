@@ -34,7 +34,7 @@ func collect():
 	floater.position.y -= 32
 	add_child(floater)
 	
-	ManagerGame.player_data['gold'] += shop_data['profits']
+	ManagerGame.player_data['gold'] += shop_data['profits'] * ManagerGame.player_data['income_mult']
 	ManagerGame.gold_changed.emit()
 
 
