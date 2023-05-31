@@ -1,4 +1,4 @@
-[gd_scene load_steps=24 format=3 uid="uid://cvf5r087rjhyb"]
+[gd_scene load_steps=27 format=3 uid="uid://cvf5r087rjhyb"]
 
 [ext_resource type="Script" path="res://scenes/UI.gd" id="1_f1jnl"]
 [ext_resource type="Script" path="res://scenes/BuildingView.gd" id="2_2o3ve"]
@@ -15,7 +15,10 @@
 [ext_resource type="Texture2D" uid="uid://44klfix13qm0" path="res://assets/icons/trolley.png" id="13_gf567"]
 [ext_resource type="Texture2D" uid="uid://diw7c6evq10dn" path="res://assets/icons/multimedia.png" id="14_tvh0c"]
 [ext_resource type="PackedScene" uid="uid://lw125tkae8lt" path="res://actors/ui/CardDisplay.tscn" id="15_6rfeq"]
+[ext_resource type="PackedScene" uid="uid://cy2ogwf1uwlqd" path="res://actors/ui/GemShopDisplay.tscn" id="16_3bcop"]
 [ext_resource type="StyleBox" uid="uid://57y6dpsx2dfl" path="res://reso/styles/panel_blue_white_outine.tres" id="16_n0u60"]
+[ext_resource type="PackedScene" uid="uid://6krbyku126xc" path="res://actors/ui/GoldShopDisplay.tscn" id="17_v7vke"]
+[ext_resource type="StyleBox" uid="uid://bsme7y7apws3d" path="res://reso/styles/button_white_normal.tres" id="19_a3v4i"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_jvosu"]
 bg_color = Color(0.372549, 0.654902, 0.890196, 1)
@@ -582,25 +585,20 @@ layout_mode = 2
 layout_mode = 2
 columns = 3
 
-[node name="Panel" type="Panel" parent="MainPanel/TabContainer/Shop/ScrollContainer/VBoxContainer/GemsBox/CenterContainer/HBoxContainer"]
-custom_minimum_size = Vector2(86, 98)
+[node name="GemShopDisplay" parent="MainPanel/TabContainer/Shop/ScrollContainer/VBoxContainer/GemsBox/CenterContainer/HBoxContainer" instance=ExtResource("16_3bcop")]
 layout_mode = 2
+id = "gem_pack_1"
+price = 0.99
 
-[node name="Panel2" type="Panel" parent="MainPanel/TabContainer/Shop/ScrollContainer/VBoxContainer/GemsBox/CenterContainer/HBoxContainer"]
-custom_minimum_size = Vector2(86, 98)
+[node name="GemShopDisplay2" parent="MainPanel/TabContainer/Shop/ScrollContainer/VBoxContainer/GemsBox/CenterContainer/HBoxContainer" instance=ExtResource("16_3bcop")]
 layout_mode = 2
+id = "gem_pack_2"
+price = 4.99
 
-[node name="Panel3" type="Panel" parent="MainPanel/TabContainer/Shop/ScrollContainer/VBoxContainer/GemsBox/CenterContainer/HBoxContainer"]
-custom_minimum_size = Vector2(86, 98)
+[node name="GemShopDisplay3" parent="MainPanel/TabContainer/Shop/ScrollContainer/VBoxContainer/GemsBox/CenterContainer/HBoxContainer" instance=ExtResource("16_3bcop")]
 layout_mode = 2
-
-[node name="Panel4" type="Panel" parent="MainPanel/TabContainer/Shop/ScrollContainer/VBoxContainer/GemsBox/CenterContainer/HBoxContainer"]
-custom_minimum_size = Vector2(86, 98)
-layout_mode = 2
-
-[node name="Panel5" type="Panel" parent="MainPanel/TabContainer/Shop/ScrollContainer/VBoxContainer/GemsBox/CenterContainer/HBoxContainer"]
-custom_minimum_size = Vector2(86, 98)
-layout_mode = 2
+id = "gem_pack_3"
+price = 9.99
 
 [node name="GoldBox" type="VBoxContainer" parent="MainPanel/TabContainer/Shop/ScrollContainer/VBoxContainer"]
 layout_mode = 2
@@ -619,8 +617,7 @@ layout_mode = 2
 layout_mode = 2
 columns = 5
 
-[node name="Panel" type="Panel" parent="MainPanel/TabContainer/Shop/ScrollContainer/VBoxContainer/GoldBox/CenterContainer/HBoxContainer"]
-custom_minimum_size = Vector2(86, 98)
+[node name="GoldShopDisplay" parent="MainPanel/TabContainer/Shop/ScrollContainer/VBoxContainer/GoldBox/CenterContainer/HBoxContainer" instance=ExtResource("17_v7vke")]
 layout_mode = 2
 
 [node name="Panel2" type="Panel" parent="MainPanel/TabContainer/Shop/ScrollContainer/VBoxContainer/GoldBox/CenterContainer/HBoxContainer"]
@@ -725,10 +722,15 @@ text = "---- Earn gems! ----"
 horizontal_alignment = 1
 
 [node name="Button" type="Button" parent="MainPanel/TabContainer/Finance/CenterContainer/Panel/VBoxContainer/VBoxContainer2"]
+self_modulate = Color(0.980392, 0.839216, 1, 1)
 layout_mode = 2
 size_flags_horizontal = 4
-theme_override_colors/font_outline_color = Color(0.796078, 0.360784, 0.396078, 1)
+theme_override_colors/font_outline_color = Color(0.313726, 0.054902, 0.0705882, 1)
 theme_override_constants/outline_size = 4
+theme_override_styles/normal = ExtResource("19_a3v4i")
+theme_override_styles/hover = ExtResource("19_a3v4i")
+theme_override_styles/pressed = ExtResource("19_a3v4i")
+theme_override_styles/focus = ExtResource("19_a3v4i")
 text = "Get +999M"
 
 [node name="TextureRect" type="TextureRect" parent="MainPanel/TabContainer/Finance/CenterContainer/Panel/VBoxContainer/VBoxContainer2/Button"]

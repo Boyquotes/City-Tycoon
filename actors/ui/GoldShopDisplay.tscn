@@ -1,0 +1,4 @@
+[gd_scene format=3 uid="uid://6krbyku126xc"]
+
+[node name="GoldShopDisplay" type="Panel"]
+custom_minimum_size = Vector2(86, 98)
