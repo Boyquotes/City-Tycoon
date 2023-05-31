@@ -1,4 +1,4 @@
-[gd_scene load_steps=28 format=3 uid="uid://cvf5r087rjhyb"]
+[gd_scene load_steps=27 format=3 uid="uid://cvf5r087rjhyb"]
 
 [ext_resource type="Script" path="res://scenes/UI.gd" id="1_f1jnl"]
 [ext_resource type="Script" path="res://scenes/BuildingView.gd" id="2_2o3ve"]
@@ -19,7 +19,6 @@
 [ext_resource type="PackedScene" uid="uid://cy2ogwf1uwlqd" path="res://actors/ui/GemShopDisplay.tscn" id="16_3bcop"]
 [ext_resource type="StyleBox" uid="uid://57y6dpsx2dfl" path="res://reso/styles/panel_blue_white_outine.tres" id="16_n0u60"]
 [ext_resource type="PackedScene" uid="uid://6krbyku126xc" path="res://actors/ui/GoldShopDisplay.tscn" id="17_v7vke"]
-[ext_resource type="StyleBox" uid="uid://bsme7y7apws3d" path="res://reso/styles/button_white_normal.tres" id="19_a3v4i"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_jvosu"]
 bg_color = Color(0.372549, 0.654902, 0.890196, 1)
@@ -498,7 +497,6 @@ expand_mode = 1
 stretch_mode = 5
 
 [node name="MainPanel" type="Panel" parent="."]
-visible = false
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -707,8 +705,6 @@ horizontal_alignment = 1
 [node name="Button" type="Button" parent="MainPanel/TabContainer/Finance/CenterContainer/Panel/VBoxContainer/VBoxContainer"]
 layout_mode = 2
 size_flags_horizontal = 4
-theme_override_colors/font_outline_color = Color(0.741176, 0.796078, 0.243137, 1)
-theme_override_constants/outline_size = 4
 text = "Get +999M"
 
 [node name="TextureRect" type="TextureRect" parent="MainPanel/TabContainer/Finance/CenterContainer/Panel/VBoxContainer/VBoxContainer/Button"]
@@ -735,15 +731,12 @@ text = "---- Earn gems! ----"
 horizontal_alignment = 1
 
 [node name="Button" type="Button" parent="MainPanel/TabContainer/Finance/CenterContainer/Panel/VBoxContainer/VBoxContainer2"]
-self_modulate = Color(0.980392, 0.839216, 1, 1)
 layout_mode = 2
 size_flags_horizontal = 4
-theme_override_colors/font_outline_color = Color(0.313726, 0.054902, 0.0705882, 1)
-theme_override_constants/outline_size = 4
-theme_override_styles/normal = ExtResource("19_a3v4i")
-theme_override_styles/hover = ExtResource("19_a3v4i")
-theme_override_styles/pressed = ExtResource("19_a3v4i")
-theme_override_styles/focus = ExtResource("19_a3v4i")
+theme_override_styles/normal = ExtResource("11_sij21")
+theme_override_styles/hover = ExtResource("11_sij21")
+theme_override_styles/pressed = ExtResource("11_sij21")
+theme_override_styles/focus = ExtResource("11_sij21")
 text = "Get +999M"
 
 [node name="TextureRect" type="TextureRect" parent="MainPanel/TabContainer/Finance/CenterContainer/Panel/VBoxContainer/VBoxContainer2/Button"]
@@ -751,9 +744,9 @@ layout_mode = 1
 anchors_preset = 4
 anchor_top = 0.5
 anchor_bottom = 0.5
-offset_left = -18.0
+offset_left = -9.0
 offset_top = -7.0
-offset_right = 10.0
+offset_right = 19.0
 offset_bottom = 21.0
 grow_vertical = 2
 rotation = -0.307178
