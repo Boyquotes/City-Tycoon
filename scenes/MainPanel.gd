@@ -2,12 +2,16 @@ extends Panel
 
 @onready var tab = $TabContainer
 @onready var business_list = get_node('%BusinessList')
+@onready var gold_card_list = get_node('%Gold').get_node('HBoxContainer')
+@onready var rare_card_list = get_node('%Rare').get_node('HBoxContainer')
+@onready var common_card_list = get_node('%Common').get_node('HBoxContainer')
 
 
 func _ready():
 	ManagerGame.shop_unlocked.connect(on_shop_unlocked)
 	
 	load_businesses()
+	load_cards()
 
 
 func open_tab(idx: int):
@@ -23,6 +27,21 @@ func load_businesses():
 		d.shop_id = b
 		
 		business_list.add_child(d)
+
+
+func load_cards():
+	for card in ManagerGame.player_data['cards']:
+		var rarity: String = ManagerGame.player_data['cards'][card]['rarity']
+		var box
+		
+		match rarity:
+			'gold': box = gold_card_list
+			'rare': box = rare_card_list
+			'common': box = common_card_list
+		
+		var display = load("res://actors/ui/CardDisplay.tscn").instantiate()
+		display.id = card
+		box.add_child(display)
 
 
 func on_shop_unlocked(id):

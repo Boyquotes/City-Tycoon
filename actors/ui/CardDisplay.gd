@@ -21,5 +21,5 @@ func load_card(id):
 		$Icon.modulate = Color.BLACK
 		$Name.modulate = Color.BLACK
 	
-	$Icon.texture = load("res://assets/icons/cards/%s.png" % id)
+#	$Icon.texture = load("res://assets/icons/cards/%s.png" % id)
 	$Name.text = ManagerGame.player_data['cards'][id]['name']

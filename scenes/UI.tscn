@@ -14,11 +14,11 @@
 [ext_resource type="Texture2D" uid="uid://duk6r3o64m25t" path="res://assets/icons/card-games.png" id="12_43lnx"]
 [ext_resource type="Texture2D" uid="uid://44klfix13qm0" path="res://assets/icons/trolley.png" id="13_gf567"]
 [ext_resource type="Texture2D" uid="uid://diw7c6evq10dn" path="res://assets/icons/multimedia.png" id="14_tvh0c"]
-[ext_resource type="PackedScene" uid="uid://lw125tkae8lt" path="res://actors/ui/CardDisplay.tscn" id="15_6rfeq"]
 [ext_resource type="Script" path="res://scenes/MainPanel.gd" id="15_kmjf2"]
 [ext_resource type="PackedScene" uid="uid://cy2ogwf1uwlqd" path="res://actors/ui/GemShopDisplay.tscn" id="16_3bcop"]
 [ext_resource type="StyleBox" uid="uid://57y6dpsx2dfl" path="res://reso/styles/panel_blue_white_outine.tres" id="16_n0u60"]
 [ext_resource type="PackedScene" uid="uid://6krbyku126xc" path="res://actors/ui/GoldShopDisplay.tscn" id="17_v7vke"]
+[ext_resource type="PackedScene" uid="uid://buksljo2p116r" path="res://CardShopDisplay.tscn" id="19_q5pqp"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_jvosu"]
 bg_color = Color(0.372549, 0.654902, 0.890196, 1)
@@ -367,7 +367,7 @@ stretch_mode = 5
 layout_mode = 2
 size_flags_horizontal = 3
 theme_override_styles/normal = SubResource("StyleBoxFlat_cmwg5")
-text = "10.4m"
+text = "10,4m"
 vertical_alignment = 1
 
 [node name="TextureRect" type="TextureRect" parent="HUD/HBoxContainer/Gold"]
@@ -524,7 +524,7 @@ theme_override_styles/panel = SubResource("StyleBoxEmpty_vvg7x")
 [node name="Cards" type="TabBar" parent="MainPanel/TabContainer"]
 layout_mode = 2
 
-[node name="CenterContainer" type="CenterContainer" parent="MainPanel/TabContainer/Cards"]
+[node name="ScrollContainer" type="ScrollContainer" parent="MainPanel/TabContainer/Cards"]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -532,27 +532,49 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="VBoxContainer" type="VBoxContainer" parent="MainPanel/TabContainer/Cards/CenterContainer"]
+[node name="VBoxContainer" type="VBoxContainer" parent="MainPanel/TabContainer/Cards/ScrollContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+alignment = 1
+
+[node name="Gold" type="VBoxContainer" parent="MainPanel/TabContainer/Cards/ScrollContainer/VBoxContainer"]
+unique_name_in_owner = true
 layout_mode = 2
 
-[node name="CardCategory" type="VBoxContainer" parent="MainPanel/TabContainer/Cards/CenterContainer/VBoxContainer"]
-layout_mode = 2
-
-[node name="Rarity" type="Label" parent="MainPanel/TabContainer/Cards/CenterContainer/VBoxContainer/CardCategory"]
+[node name="Rarity" type="Label" parent="MainPanel/TabContainer/Cards/ScrollContainer/VBoxContainer/Gold"]
 layout_mode = 2
 text = "Gold Cards"
 horizontal_alignment = 1
 
-[node name="HBoxContainer" type="HBoxContainer" parent="MainPanel/TabContainer/Cards/CenterContainer/VBoxContainer/CardCategory"]
+[node name="HBoxContainer" type="HBoxContainer" parent="MainPanel/TabContainer/Cards/ScrollContainer/VBoxContainer/Gold"]
+layout_mode = 2
+alignment = 1
+
+[node name="Rare" type="VBoxContainer" parent="MainPanel/TabContainer/Cards/ScrollContainer/VBoxContainer"]
+unique_name_in_owner = true
 layout_mode = 2
 
-[node name="CardDisplay" parent="MainPanel/TabContainer/Cards/CenterContainer/VBoxContainer/CardCategory/HBoxContainer" instance=ExtResource("15_6rfeq")]
+[node name="Rarity" type="Label" parent="MainPanel/TabContainer/Cards/ScrollContainer/VBoxContainer/Rare"]
 layout_mode = 2
-id = "card_miguel"
+text = "Rare Cards"
+horizontal_alignment = 1
 
-[node name="CardDisplay2" parent="MainPanel/TabContainer/Cards/CenterContainer/VBoxContainer/CardCategory/HBoxContainer" instance=ExtResource("15_6rfeq")]
+[node name="HBoxContainer" type="HBoxContainer" parent="MainPanel/TabContainer/Cards/ScrollContainer/VBoxContainer/Rare"]
 layout_mode = 2
-id = "card_nicole"
+alignment = 1
+
+[node name="Common" type="VBoxContainer" parent="MainPanel/TabContainer/Cards/ScrollContainer/VBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+
+[node name="Rarity" type="Label" parent="MainPanel/TabContainer/Cards/ScrollContainer/VBoxContainer/Common"]
+layout_mode = 2
+text = "Common Cards"
+horizontal_alignment = 1
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MainPanel/TabContainer/Cards/ScrollContainer/VBoxContainer/Common"]
+layout_mode = 2
+alignment = 1
 
 [node name="Shop" type="TabBar" parent="MainPanel/TabContainer"]
 visible = false
@@ -656,17 +678,20 @@ layout_mode = 2
 layout_mode = 2
 columns = 5
 
-[node name="Panel" type="Panel" parent="MainPanel/TabContainer/Shop/ScrollContainer/VBoxContainer/CardsBox/CenterContainer/HBoxContainer"]
-custom_minimum_size = Vector2(86, 98)
+[node name="CardShopDisplay" parent="MainPanel/TabContainer/Shop/ScrollContainer/VBoxContainer/CardsBox/CenterContainer/HBoxContainer" instance=ExtResource("19_q5pqp")]
 layout_mode = 2
+item_name = "Lucky Draw"
+price = 200
 
-[node name="Panel2" type="Panel" parent="MainPanel/TabContainer/Shop/ScrollContainer/VBoxContainer/CardsBox/CenterContainer/HBoxContainer"]
-custom_minimum_size = Vector2(86, 98)
+[node name="CardShopDisplay2" parent="MainPanel/TabContainer/Shop/ScrollContainer/VBoxContainer/CardsBox/CenterContainer/HBoxContainer" instance=ExtResource("19_q5pqp")]
 layout_mode = 2
+item_name = "Clover Draw"
+price = 25
 
-[node name="Panel3" type="Panel" parent="MainPanel/TabContainer/Shop/ScrollContainer/VBoxContainer/CardsBox/CenterContainer/HBoxContainer"]
-custom_minimum_size = Vector2(86, 98)
+[node name="CardShopDisplay3" parent="MainPanel/TabContainer/Shop/ScrollContainer/VBoxContainer/CardsBox/CenterContainer/HBoxContainer" instance=ExtResource("19_q5pqp")]
 layout_mode = 2
+item_name = "Normal Draw"
+price = 10
 
 [node name="Finance" type="TabBar" parent="MainPanel/TabContainer"]
 visible = false

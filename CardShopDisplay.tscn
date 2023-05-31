@@ -1,0 +1,74 @@
+[gd_scene load_steps=7 format=3 uid="uid://buksljo2p116r"]
+
+[ext_resource type="StyleBox" uid="uid://o4l5wiq57njy" path="res://reso/styles/panel_gold_white_outine.tres" id="1_tbbed"]
+[ext_resource type="Script" path="res://CardShopDisplay.gd" id="2_g68d4"]
+[ext_resource type="Texture2D" uid="uid://v4wf1fdk4lms" path="res://assets/icons/card-game (1).png" id="3_mjw6v"]
+[ext_resource type="Texture2D" uid="uid://btda2157avdv3" path="res://assets/icons/ruby.png" id="4_5sqyw"]
+[ext_resource type="FontFile" uid="uid://dcampv481ilui" path="res://reso/styles/Typo_Round_Bold_Demo.otf" id="4_nlduy"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_drvqw"]
+font = ExtResource("4_nlduy")
+font_size = 12
+outline_size = 3
+outline_color = Color(0.121569, 0.121569, 0.121569, 1)
+
+[node name="CardShopDisplay" type="Panel"]
+custom_minimum_size = Vector2(100, 120)
+theme_override_styles/panel = ExtResource("1_tbbed")
+script = ExtResource("2_g68d4")
+
+[node name="Icon" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 13.0
+offset_top = 15.0
+offset_right = -13.0
+offset_bottom = -15.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("3_mjw6v")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="Name" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_top = 4.0
+offset_bottom = 25.0
+grow_horizontal = 2
+theme_override_fonts/font = ExtResource("4_nlduy")
+text = "Gold Cards"
+label_settings = SubResource("LabelSettings_drvqw")
+horizontal_alignment = 1
+
+[node name="Price" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 10.0
+offset_top = -20.0
+offset_right = -8.0
+offset_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 0
+text = "9999"
+horizontal_alignment = 1
+
+[node name="TextureRect" type="TextureRect" parent="Price"]
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = -2.0
+offset_top = -10.5
+offset_right = 14.0
+offset_bottom = 5.5
+grow_vertical = 2
+texture = ExtResource("4_5sqyw")
+expand_mode = 1
+stretch_mode = 5

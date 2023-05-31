@@ -11,10 +11,54 @@
 		"income_add": "3.0",
 		"is_unlocked": false
 	},
+	"card_bea": {
+		"rarity": "gold",
+		"name": "Bea",
+		"income_add": "3.0",
+		"is_unlocked": false
+	},
+	
+	
+	
+	
 	"card_anne": {
 		"rarity": "rare",
-		"name": "anne",
+		"name": "Anne",
 		"income_add": "2.1",
+		"is_unlocked": false
+	},
+	"card_dexter": {
+		"rarity": "rare",
+		"name": "Dexter",
+		"income_add": "2.1",
+		"is_unlocked": false
+	},
+	"card_summer": {
+		"rarity": "rare",
+		"name": "Summer",
+		"income_add": "2.1",
+		"is_unlocked": false
+	},
+	"card_andrew": {
+		"rarity": "rare",
+		"name": "Andrew",
+		"income_add": "2.1",
+		"is_unlocked": false
+	},
+	
+	
+	
+	
+	"card_sam": {
+		"rarity": "common",
+		"name": "Sam",
+		"income_add": "1.1",
+		"is_unlocked": false
+	},
+	"card_david": {
+		"rarity": "common",
+		"name": "David",
+		"income_add": "1.1",
 		"is_unlocked": false
 	},
 }
