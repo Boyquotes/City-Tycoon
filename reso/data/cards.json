@@ -9,9 +9,9 @@
 		"name": "Nicole",
 		"income_add": "3.0",
 	},
-	"card_3": {
+	"card_anne": {
 		"rarity": "rare",
-		"name": "Nova",
+		"name": "anne",
 		"income_add": "2.1",
 	},
 }
