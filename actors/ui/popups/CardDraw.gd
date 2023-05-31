@@ -23,10 +23,10 @@ func display(price: int, id: String, perc_arr: Array):
 	$Panel/VBoxContainer/RarePerc.text = '%' + str(rare_perc) + ' Rare Card'
 	$Panel/VBoxContainer/CommonPerc.text = '%' + str(common_perc) + ' Common Card'
 	
-#	if ManagerGame.player_data['gems'] >= price:
-#		$Panel/VBoxContainer/Buy.disabled = false
-#	else:
-#		$Panel/VBoxContainer/Buy.disabled = true
+	if ManagerGame.player_data['gems'] >= price:
+		$Panel/VBoxContainer/Buy.disabled = false
+	else:
+		$Panel/VBoxContainer/Buy.disabled = true
 	
 	match id:
 		'lucky': pass
@@ -87,6 +87,12 @@ func roll():
 		d.get_node('Amount').text = 'x' + str(test_dict[w]['amount'])
 		d.get_node('Icon').texture = load("res://assets/icons/cards/%s.png" % w)
 		$CanvasLayer/WinControl/WinPanel/ScrollContainer/GridContainer.add_child(d)
+		
+		ManagerGame.player_data['cards'][w]['exp'] += test_dict[w]['amount']
+		
+		while ManagerGame.player_data['cards'][w]['exp'] >= ManagerGame.player_data['cards'][w]['exp_max']:
+			ManagerGame.player_data['cards'][w]['exp'] = ManagerGame.player_data['cards'][w]['exp_max'] - ManagerGame.player_data['cards'][w]['exp']
+			ManagerGame.player_data['cards'][w]['exp_max'] += 10
 	
 	$CanvasLayer/WinControl.scale = Vector2.ZERO
 	$CanvasLayer/WinControl.show()
