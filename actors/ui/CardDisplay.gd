@@ -19,7 +19,7 @@ func load_card(id):
 		$Name.modulate = Color.WHITE
 		$EXP.show()
 		
-		ManagerGame.player_data['income_mult'] *= data['income_add']
+#		ManagerGame.player_data['income_mult'] *= data['income_add']
 	else:
 		$Icon.modulate = Color.BLACK
 		$Name.modulate = Color.BLACK
@@ -27,6 +27,8 @@ func load_card(id):
 	
 	$Icon.texture = load("res://assets/icons/cards/%s.png" % id)
 	$Name.text = ManagerGame.player_data['cards'][id]['name']
+	
+	$EXP/Amount.text = str(ManagerGame.player_data['cards'][id]['exp']) + '/' + str(ManagerGame.player_data['cards'][id]['exp_max'])
 
 
 func _on_gui_input(event):

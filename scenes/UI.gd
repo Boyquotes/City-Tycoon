@@ -17,6 +17,10 @@ func pop_ui(scene):
 	pop_ups.add_child(scene)
 
 
+func refresh_cards():
+	$MainPanel.load_cards()
+
+
 func _on_card_pressed(idx):
 	$MainPanel.tab.current_tab = idx
 	$MainPanel.show()

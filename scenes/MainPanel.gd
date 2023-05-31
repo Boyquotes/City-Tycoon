@@ -29,7 +29,18 @@ func load_businesses():
 		business_list.add_child(d)
 
 
+func clear_cards():
+	for child in gold_card_list.get_children():
+		child.queue_free()
+	for child in rare_card_list.get_children():
+		child.queue_free()
+	for child in common_card_list.get_children():
+		child.queue_free()
+
+
 func load_cards():
+	clear_cards()
+	
 	for card in ManagerGame.player_data['cards']:
 		var rarity: String = ManagerGame.player_data['cards'][card]['rarity']
 		var box
