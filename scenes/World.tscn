@@ -33,7 +33,7 @@ script = ExtResource("1_44mnh")
 [node name="UI" parent="CanvasLayer" instance=ExtResource("1_dvuxt")]
 
 [node name="Cam" parent="." instance=ExtResource("1_52kn3")]
-position = Vector2(227, 137)
+position = Vector2(552, 212)
 
 [node name="TL" parent="Cam" index="0"]
 position = Vector2(-882, -443)

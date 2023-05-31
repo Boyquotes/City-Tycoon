@@ -65,7 +65,8 @@ grow_horizontal = 2
 grow_vertical = 0
 theme_override_styles/background = SubResource("StyleBoxFlat_ubqy8")
 theme_override_styles/fill = SubResource("StyleBoxFlat_8keca")
-value = 40.0
+max_value = 1.0
+value = 0.2
 
 [node name="Label" type="Label" parent="Progress"]
 layout_mode = 1

@@ -24,7 +24,7 @@ func _physics_process(delta):
 		
 		hide()
 	elif ResourceLoader.load_threaded_get_status(path) == ResourceLoader.THREAD_LOAD_IN_PROGRESS:
-		$Progress.value = ResourceLoader.load_threaded_get_status(path, [1])
+		$Progress.value = ResourceLoader.load_threaded_get_status(path)
 	
 	tick += delta
 
