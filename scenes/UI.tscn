@@ -78,6 +78,7 @@ script = ExtResource("1_f1jnl")
 metadata/_edit_vertical_guides_ = []
 
 [node name="Popups" type="CanvasLayer" parent="."]
+layer = 10
 
 [node name="BuildingView" type="Control" parent="."]
 visible = false
