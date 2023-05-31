@@ -23,10 +23,10 @@ func display(price: int, id: String, perc_arr: Array):
 	$Panel/VBoxContainer/RarePerc.text = '%' + str(rare_perc) + ' Rare Card'
 	$Panel/VBoxContainer/CommonPerc.text = '%' + str(common_perc) + ' Common Card'
 	
-#	if ManagerGame.player_data['gems'] >= price:
-#		$Panel/VBoxContainer/Buy.disabled = false
-#	else:
-#		$Panel/VBoxContainer/Buy.disabled = true
+	if ManagerGame.player_data['gems'] >= price:
+		$Panel/VBoxContainer/Buy.disabled = false
+	else:
+		$Panel/VBoxContainer/Buy.disabled = true
 	
 	match id:
 		'lucky': pass
