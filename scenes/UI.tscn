@@ -498,6 +498,7 @@ expand_mode = 1
 stretch_mode = 5
 
 [node name="MainPanel" type="Panel" parent="."]
+visible = false
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -595,16 +596,19 @@ columns = 3
 
 [node name="GemShopDisplay" parent="MainPanel/TabContainer/Shop/ScrollContainer/VBoxContainer/GemsBox/CenterContainer/HBoxContainer" instance=ExtResource("16_3bcop")]
 layout_mode = 2
+item_name = "Few Gems"
 id = "gem_pack_1"
 price = 0.99
 
 [node name="GemShopDisplay2" parent="MainPanel/TabContainer/Shop/ScrollContainer/VBoxContainer/GemsBox/CenterContainer/HBoxContainer" instance=ExtResource("16_3bcop")]
 layout_mode = 2
+item_name = "Many Gems"
 id = "gem_pack_2"
 price = 4.99
 
 [node name="GemShopDisplay3" parent="MainPanel/TabContainer/Shop/ScrollContainer/VBoxContainer/GemsBox/CenterContainer/HBoxContainer" instance=ExtResource("16_3bcop")]
 layout_mode = 2
+item_name = "Bag of Gems"
 id = "gem_pack_3"
 price = 9.99
 
@@ -778,6 +782,18 @@ unique_name_in_owner = true
 layout_mode = 2
 size_flags_horizontal = 3
 
+[node name="Close" type="Button" parent="MainPanel"]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -77.0
+offset_top = 7.0
+offset_right = -11.0
+offset_bottom = 37.0
+grow_horizontal = 0
+text = "Close"
+
 [connection signal="gui_input" from="BuildingView" to="BuildingView" method="_on_gui_input"]
 [connection signal="visibility_changed" from="BuildingView" to="BuildingView" method="_on_visibility_changed"]
 [connection signal="pressed" from="BuildingView/Panel/VBoxContainer/VBoxContainer/HBoxContainer/BI" to="BuildingView" method="_on_bi_pressed"]
@@ -786,3 +802,4 @@ size_flags_horizontal = 3
 [connection signal="pressed" from="Stats/HBoxContainer/Cards" to="." method="_on_card_pressed" binds= [0]]
 [connection signal="pressed" from="Stats/HBoxContainer/Shop" to="." method="_on_card_pressed" binds= [1]]
 [connection signal="pressed" from="Stats/HBoxContainer/Ads" to="." method="_on_card_pressed" binds= [2]]
+[connection signal="pressed" from="MainPanel/Close" to="MainPanel" method="_on_close_pressed"]

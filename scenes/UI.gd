@@ -11,5 +11,6 @@ func show_building(data: Dictionary):
 	$BuildingView.show()
 
 
-func _on_card_pressed(extra_arg_0):
+func _on_card_pressed(idx):
+	$MainPanel.tab.current_tab = idx
 	$MainPanel.show()

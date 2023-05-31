@@ -1,10 +1,17 @@
-[gd_scene load_steps=3 format=3 uid="uid://cy2ogwf1uwlqd"]
+[gd_scene load_steps=5 format=3 uid="uid://cy2ogwf1uwlqd"]
 
 [ext_resource type="Script" path="res://actors/ui/GemShopDisplay.gd" id="1_7nnym"]
+[ext_resource type="StyleBox" uid="uid://57y6dpsx2dfl" path="res://reso/styles/panel_blue_white_outine.tres" id="1_hkkvf"]
 [ext_resource type="Texture2D" uid="uid://iafryvgvh3fr" path="res://assets/icons/gem_pack_1.png" id="2_id4jd"]
 
+[sub_resource type="LabelSettings" id="LabelSettings_swbbq"]
+font_size = 12
+outline_size = 3
+outline_color = Color(0.121569, 0.121569, 0.121569, 1)
+
 [node name="GemShopDisplay" type="Panel"]
-custom_minimum_size = Vector2(86, 98)
+custom_minimum_size = Vector2(100, 120)
+theme_override_styles/panel = ExtResource("1_hkkvf")
 script = ExtResource("1_7nnym")
 
 [node name="Icon" type="TextureRect" parent="."]
@@ -12,14 +19,28 @@ layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = 4.0
-offset_right = -4.0
-offset_bottom = -26.0
+offset_left = 10.0
+offset_top = 17.0
+offset_right = -10.0
+offset_bottom = -21.0
 grow_horizontal = 2
 grow_vertical = 2
 texture = ExtResource("2_id4jd")
 expand_mode = 1
 stretch_mode = 5
+
+[node name="Name" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_left = 4.0
+offset_top = 7.0
+offset_right = -4.0
+offset_bottom = 25.0
+grow_horizontal = 2
+text = "Handful of Gems"
+label_settings = SubResource("LabelSettings_swbbq")
+horizontal_alignment = 1
 
 [node name="Price" type="Label" parent="."]
 layout_mode = 1
@@ -33,5 +54,5 @@ offset_right = -5.0
 offset_bottom = -5.0
 grow_horizontal = 2
 grow_vertical = 0
-text = "$0.99"
+text = "$0,99"
 horizontal_alignment = 1

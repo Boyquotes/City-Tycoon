@@ -1,7 +1,8 @@
 extends Panel
 
-
+@onready var tab = $TabContainer
 @onready var business_list = get_node('%BusinessList')
+
 
 func _ready():
 	load_businesses()
@@ -20,3 +21,7 @@ func load_businesses():
 		d.shop_id = b
 		
 		business_list.add_child(d)
+
+
+func _on_close_pressed():
+	hide()
