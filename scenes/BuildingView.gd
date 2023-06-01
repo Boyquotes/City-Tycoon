@@ -32,6 +32,8 @@ func load_shop(data = null):
 	if data == null:
 		return
 	
+	$"/root/Sfx".get_node('Pop').play()
+	
 	if data['is_unlocked'] == false:
 		get_node('%Name').text = data['name'] + '(Locked)'
 		get_node('%Level').text = 'Level ' + str(data['level'])
@@ -71,7 +73,7 @@ func level_up_shop():
 		current_data['exp'] = 0
 		current_data['exp_max'] += 10
 	
-	
+	$"/root/Sfx".get_node('Spell').play()
 	
 	load_shop(current_data)
 

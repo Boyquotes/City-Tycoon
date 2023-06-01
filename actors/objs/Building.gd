@@ -26,6 +26,8 @@ func collect():
 	if shop_data['is_unlocked'] == false:
 		return
 	
+	$"/root/Sfx".get_node('Coin').play()
+	
 	# the floater variable name here refers to the number that floats when the building
 	# gets a profit or earns money. idk why i like to use 'floater' for things like this man honestly lmao
 	var floater = load("res://actors/etc/NumberFloater.tscn").instantiate()

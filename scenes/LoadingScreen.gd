@@ -36,5 +36,7 @@ func load_scene(scene_path):
 	if e == OK:
 		set_physics_process(true)
 	
+	$"/root/Sfx".get_node('Spell').play()
+	
 	get_tree().root.get_children().back().queue_free()
 	show()

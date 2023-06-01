@@ -1,0 +1,19 @@
+[gd_scene load_steps=4 format=3 uid="uid://bo2ctu0npnav4"]
+
+[ext_resource type="AudioStream" uid="uid://upjjdf1h63y0" path="res://sounds/sfx/Spelll7.wav" id="1_xgin0"]
+[ext_resource type="AudioStream" uid="uid://dcpqssfayfgu7" path="res://sounds/sfx/Pop1.wav" id="2_wcixn"]
+[ext_resource type="AudioStream" uid="uid://cv8wiw3m1ir5t" path="res://sounds/sfx/Coin5.wav" id="3_mmjpd"]
+
+[node name="SFX" type="Node"]
+
+[node name="Spell" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("1_xgin0")
+bus = &"SFX"
+
+[node name="Pop" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("2_wcixn")
+bus = &"SFX"
+
+[node name="Coin" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_mmjpd")
+bus = &"SFX"

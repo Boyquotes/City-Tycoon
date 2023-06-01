@@ -1,0 +1,10 @@
+[gd_scene load_steps=2 format=3 uid="uid://ovnxjc7fd1bk"]
+
+[ext_resource type="AudioStream" uid="uid://cnq5gwmchw3tq" path="res://sounds/bgm/100116happybgm.wav" id="1_2cong"]
+
+[node name="BGM" type="Node"]
+
+[node name="BGM" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("1_2cong")
+autoplay = true
+bus = &"Music"
