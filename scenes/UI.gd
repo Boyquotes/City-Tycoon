@@ -2,6 +2,7 @@ extends Control
 
 
 @onready var pop_ups = $Popups
+@onready var main_panel = $MainPanel
 
 
 func _ready():
@@ -18,9 +19,11 @@ func pop_ui(scene):
 
 
 func refresh_cards():
-	$MainPanel.load_cards()
+	main_panel.load_cards()
 
 
 func _on_card_pressed(idx):
-	$MainPanel.tab.current_tab = idx
-	$MainPanel.show()
+	main_panel.tab.current_tab = idx
+	main_panel.show()
+	
+	main_panel.load_ads_buttons()

@@ -5,6 +5,8 @@ extends Panel
 @onready var gold_card_list = get_node('%Gold').get_node('HBoxContainer')
 @onready var rare_card_list = get_node('%Rare').get_node('HBoxContainer')
 @onready var common_card_list = get_node('%Common').get_node('HBoxContainer')
+@onready var get_gold_ad = get_node('%GetGold')
+@onready var get_gem_ad = get_node('%GetGem')
 
 
 func _ready():
@@ -12,6 +14,7 @@ func _ready():
 	
 	load_businesses()
 	load_cards()
+	load_ads_buttons()
 
 
 func open_tab(idx: int):
@@ -27,6 +30,12 @@ func load_businesses():
 		d.shop_id = b
 		
 		business_list.add_child(d)
+
+
+func load_ads_buttons():
+	var g = ManagerGame.player_data['gold'] * .3
+	
+	get_gold_ad.text = 'Get +%s' % ManagerGame.int_to_currency(g)
 
 
 func clear_cards():

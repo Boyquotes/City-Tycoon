@@ -436,11 +436,13 @@ alignment = 1
 
 [node name="Cards" type="Button" parent="Stats/HBoxContainer"]
 layout_mode = 2
+size_flags_horizontal = 3
 theme_override_styles/normal = ExtResource("11_sij21")
 theme_override_styles/hover = ExtResource("11_sij21")
 theme_override_styles/pressed = ExtResource("11_sij21")
 theme_override_styles/focus = ExtResource("11_sij21")
 text = "k_cards"
+clip_text = true
 
 [node name="TextureRect" type="TextureRect" parent="Stats/HBoxContainer/Cards"]
 layout_mode = 1
@@ -458,11 +460,13 @@ stretch_mode = 5
 
 [node name="Shop" type="Button" parent="Stats/HBoxContainer"]
 layout_mode = 2
+size_flags_horizontal = 3
 theme_override_styles/normal = ExtResource("11_sij21")
 theme_override_styles/hover = ExtResource("11_sij21")
 theme_override_styles/pressed = ExtResource("11_sij21")
 theme_override_styles/focus = ExtResource("11_sij21")
 text = "k_shop"
+clip_text = true
 
 [node name="TextureRect" type="TextureRect" parent="Stats/HBoxContainer/Shop"]
 layout_mode = 1
@@ -480,11 +484,13 @@ stretch_mode = 5
 
 [node name="Ads" type="Button" parent="Stats/HBoxContainer"]
 layout_mode = 2
+size_flags_horizontal = 3
 theme_override_styles/normal = ExtResource("11_sij21")
 theme_override_styles/hover = ExtResource("11_sij21")
 theme_override_styles/pressed = ExtResource("11_sij21")
 theme_override_styles/focus = ExtResource("11_sij21")
 text = "k_ads"
+clip_text = true
 
 [node name="TextureRect" type="TextureRect" parent="Stats/HBoxContainer/Ads"]
 layout_mode = 1
@@ -501,7 +507,6 @@ expand_mode = 1
 stretch_mode = 5
 
 [node name="MainPanel" type="Panel" parent="."]
-visible = false
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -526,6 +531,7 @@ grow_vertical = 2
 theme_override_styles/panel = SubResource("StyleBoxEmpty_vvg7x")
 
 [node name="k_cards" type="TabBar" parent="MainPanel/TabContainer"]
+visible = false
 layout_mode = 2
 
 [node name="ScrollContainer" type="ScrollContainer" parent="MainPanel/TabContainer/k_cards"]
@@ -644,6 +650,7 @@ id = "gem_pack_3"
 price = 9.99
 
 [node name="GoldBox" type="VBoxContainer" parent="MainPanel/TabContainer/k_shop/ScrollContainer/VBoxContainer"]
+visible = false
 layout_mode = 2
 
 [node name="Label" type="Label" parent="MainPanel/TabContainer/k_shop/ScrollContainer/VBoxContainer/GoldBox"]
@@ -716,7 +723,6 @@ rare_perc = 8.0
 normal_perc = 90.0
 
 [node name="k_finance" type="TabBar" parent="MainPanel/TabContainer"]
-visible = false
 layout_mode = 2
 
 [node name="CenterContainer" type="CenterContainer" parent="MainPanel/TabContainer/k_finance"]
@@ -750,12 +756,14 @@ layout_mode = 2
 text = "---- Earn gold! ----"
 horizontal_alignment = 1
 
-[node name="Button" type="Button" parent="MainPanel/TabContainer/k_finance/CenterContainer/Panel/VBoxContainer/VBoxContainer"]
+[node name="GetGold" type="Button" parent="MainPanel/TabContainer/k_finance/CenterContainer/Panel/VBoxContainer/VBoxContainer"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(120, 0)
 layout_mode = 2
 size_flags_horizontal = 4
 text = "Get +999M"
 
-[node name="TextureRect" type="TextureRect" parent="MainPanel/TabContainer/k_finance/CenterContainer/Panel/VBoxContainer/VBoxContainer/Button"]
+[node name="TextureRect" type="TextureRect" parent="MainPanel/TabContainer/k_finance/CenterContainer/Panel/VBoxContainer/VBoxContainer/GetGold"]
 layout_mode = 1
 anchors_preset = 4
 anchor_top = 0.5
@@ -778,7 +786,9 @@ layout_mode = 2
 text = "---- Earn gems! ----"
 horizontal_alignment = 1
 
-[node name="Button" type="Button" parent="MainPanel/TabContainer/k_finance/CenterContainer/Panel/VBoxContainer/VBoxContainer2"]
+[node name="GetGem" type="Button" parent="MainPanel/TabContainer/k_finance/CenterContainer/Panel/VBoxContainer/VBoxContainer2"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(120, 0)
 layout_mode = 2
 size_flags_horizontal = 4
 theme_override_styles/normal = ExtResource("11_sij21")
@@ -787,7 +797,7 @@ theme_override_styles/pressed = ExtResource("11_sij21")
 theme_override_styles/focus = ExtResource("11_sij21")
 text = "Get +999M"
 
-[node name="TextureRect" type="TextureRect" parent="MainPanel/TabContainer/k_finance/CenterContainer/Panel/VBoxContainer/VBoxContainer2/Button"]
+[node name="TextureRect" type="TextureRect" parent="MainPanel/TabContainer/k_finance/CenterContainer/Panel/VBoxContainer/VBoxContainer2/GetGem"]
 layout_mode = 1
 anchors_preset = 4
 anchor_top = 0.5

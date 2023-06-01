@@ -130,7 +130,7 @@ custom_minimum_size = Vector2(100, 0)
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 10
-text = "Close"
+text = "k_close"
 
 [node name="TextureRect" type="TextureRect" parent="."]
 layout_mode = 1
