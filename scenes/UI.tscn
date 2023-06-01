@@ -532,7 +532,6 @@ grow_vertical = 2
 theme_override_styles/panel = SubResource("StyleBoxEmpty_vvg7x")
 
 [node name="k_cards" type="TabBar" parent="MainPanel/TabContainer"]
-visible = false
 layout_mode = 2
 
 [node name="ScrollContainer" type="ScrollContainer" parent="MainPanel/TabContainer/k_cards"]
@@ -637,18 +636,21 @@ layout_mode = 2
 item_name = "Few Gems"
 id = "gem_pack_1"
 price = 0.99
+amount = 20
 
 [node name="GemShopDisplay2" parent="MainPanel/TabContainer/k_shop/ScrollContainer/VBoxContainer/GemsBox/CenterContainer/HBoxContainer" instance=ExtResource("16_3bcop")]
 layout_mode = 2
 item_name = "Many Gems"
 id = "gem_pack_2"
 price = 4.99
+amount = 100
 
 [node name="GemShopDisplay3" parent="MainPanel/TabContainer/k_shop/ScrollContainer/VBoxContainer/GemsBox/CenterContainer/HBoxContainer" instance=ExtResource("16_3bcop")]
 layout_mode = 2
 item_name = "Bag of Gems"
 id = "gem_pack_3"
 price = 9.99
+amount = 600
 
 [node name="GoldBox" type="VBoxContainer" parent="MainPanel/TabContainer/k_shop/ScrollContainer/VBoxContainer"]
 visible = false
@@ -724,6 +726,7 @@ rare_perc = 8.0
 normal_perc = 90.0
 
 [node name="k_finance" type="TabBar" parent="MainPanel/TabContainer"]
+visible = false
 layout_mode = 2
 
 [node name="CenterContainer" type="CenterContainer" parent="MainPanel/TabContainer/k_finance"]

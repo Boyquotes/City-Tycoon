@@ -13,6 +13,7 @@ func _ready():
 	ManagerGame.shop_unlocked.connect(on_shop_unlocked)
 	
 	MobileAds.rewarded_ad_loaded.connect(on_rewarded_ad_loaded)
+	MobileAds.user_earned_rewarded.connect(on_user_earned_rewarded)
 	
 	load_businesses()
 	load_cards()
@@ -77,6 +78,10 @@ func on_shop_unlocked(id):
 
 func on_rewarded_ad_loaded():
 	MobileAds.show_rewarded()
+
+
+func on_user_earned_rewarded(currency, amount):
+	pass
 
 
 func _on_close_pressed():
