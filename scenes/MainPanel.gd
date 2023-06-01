@@ -93,4 +93,4 @@ func _on_get_gold_pressed():
 
 
 func _on_get_gem_pressed():
-	pass # Replace with function body.
+	MobileAds.load_rewarded()

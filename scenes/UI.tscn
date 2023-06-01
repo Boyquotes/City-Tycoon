@@ -799,7 +799,7 @@ theme_override_styles/normal = ExtResource("11_sij21")
 theme_override_styles/hover = ExtResource("11_sij21")
 theme_override_styles/pressed = ExtResource("11_sij21")
 theme_override_styles/focus = ExtResource("11_sij21")
-text = "Get +999M"
+text = "Get +5 Gems"
 
 [node name="TextureRect" type="TextureRect" parent="MainPanel/TabContainer/k_finance/CenterContainer/Panel/VBoxContainer/VBoxContainer2/GetGem"]
 layout_mode = 1

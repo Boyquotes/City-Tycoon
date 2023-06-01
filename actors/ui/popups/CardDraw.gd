@@ -10,9 +10,14 @@ var common_perc
 
 func _ready():
 	$CanvasLayer/WinControl.pivot_offset = $CanvasLayer/WinControl.size / 2
+	
+	$"/root/Sfx".get_node('Pop').play()
 
 
 func display(price: int, id: String, perc_arr: Array):
+	
+	
+	
 	$Panel/VBoxContainer/Buy.text = 'Buy ' + str(price)
 	
 	gold_perc = perc_arr[0]
