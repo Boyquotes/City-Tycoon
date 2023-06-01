@@ -19,6 +19,9 @@ signal shop_unlocked(shop_id)
 var save_path = 'user://player_data.json'
 
 var player_data = {
+	'settings': {
+		'lang': 'en'
+	},
 	'shops_data': {},
 	'cards': {},
 	'gold': 120043,

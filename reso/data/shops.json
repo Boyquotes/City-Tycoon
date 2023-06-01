@@ -6,7 +6,7 @@
 		"level": 1,
 		"exp": 0,
 		"exp_max": 10,
-		"base_upgrades_increment": 1.5,
+		"base_upgrades_increment": 2.2,
 		"upgrades": {
 			"improve": 0,
 			"staff": 0,
@@ -22,7 +22,7 @@
 		"level": 1,
 		"exp": 0,
 		"exp_max": 10,
-		"base_upgrades_increment": 1.7,
+		"base_upgrades_increment": 2.5,
 		"upgrades": {
 			"improve": 0,
 			"staff": 0,
@@ -38,7 +38,7 @@
 		"level": 1,
 		"exp": 0,
 		"exp_max": 10,
-		"base_upgrades_increment": 1.7,
+		"base_upgrades_increment": 3.5,
 		"upgrades": {
 			"improve": 0,
 			"staff": 0,
@@ -54,7 +54,7 @@
 		"level": 1,
 		"exp": 0,
 		"exp_max": 10,
-		"base_upgrades_increment": 1.7,
+		"base_upgrades_increment": 3.5,
 		"upgrades": {
 			"improve": 0,
 			"staff": 0,
@@ -70,7 +70,7 @@
 		"level": 1,
 		"exp": 0,
 		"exp_max": 10,
-		"base_upgrades_increment": 1.7,
+		"base_upgrades_increment": 3.5,
 		"upgrades": {
 			"improve": 0,
 			"staff": 0,

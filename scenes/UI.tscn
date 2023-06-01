@@ -207,7 +207,7 @@ theme_override_constants/separation = 0
 
 [node name="Label" type="Label" parent="BuildingView/Panel/VBoxContainer/VBoxContainer/HBoxContainer/VBoxContainer"]
 layout_mode = 2
-text = "Business improvement"
+text = "k_business_improvement"
 
 [node name="Label2" type="Label" parent="BuildingView/Panel/VBoxContainer/VBoxContainer/HBoxContainer/VBoxContainer"]
 layout_mode = 2
@@ -252,7 +252,7 @@ theme_override_constants/separation = 0
 
 [node name="Label" type="Label" parent="BuildingView/Panel/VBoxContainer/VBoxContainer/HBoxContainer2/VBoxContainer"]
 layout_mode = 2
-text = "Employee Benefits"
+text = "k_employee_benefits"
 
 [node name="Label2" type="Label" parent="BuildingView/Panel/VBoxContainer/VBoxContainer/HBoxContainer2/VBoxContainer"]
 layout_mode = 2
@@ -297,7 +297,7 @@ theme_override_constants/separation = 0
 
 [node name="Label" type="Label" parent="BuildingView/Panel/VBoxContainer/VBoxContainer/HBoxContainer3/VBoxContainer"]
 layout_mode = 2
-text = "Marketing"
+text = "k_marketing"
 
 [node name="Label2" type="Label" parent="BuildingView/Panel/VBoxContainer/VBoxContainer/HBoxContainer3/VBoxContainer"]
 layout_mode = 2
@@ -440,7 +440,7 @@ theme_override_styles/normal = ExtResource("11_sij21")
 theme_override_styles/hover = ExtResource("11_sij21")
 theme_override_styles/pressed = ExtResource("11_sij21")
 theme_override_styles/focus = ExtResource("11_sij21")
-text = "Cards"
+text = "k_cards"
 
 [node name="TextureRect" type="TextureRect" parent="Stats/HBoxContainer/Cards"]
 layout_mode = 1
@@ -462,7 +462,7 @@ theme_override_styles/normal = ExtResource("11_sij21")
 theme_override_styles/hover = ExtResource("11_sij21")
 theme_override_styles/pressed = ExtResource("11_sij21")
 theme_override_styles/focus = ExtResource("11_sij21")
-text = "Shop"
+text = "k_shop"
 
 [node name="TextureRect" type="TextureRect" parent="Stats/HBoxContainer/Shop"]
 layout_mode = 1
@@ -484,7 +484,7 @@ theme_override_styles/normal = ExtResource("11_sij21")
 theme_override_styles/hover = ExtResource("11_sij21")
 theme_override_styles/pressed = ExtResource("11_sij21")
 theme_override_styles/focus = ExtResource("11_sij21")
-text = "Ads"
+text = "k_ads"
 
 [node name="TextureRect" type="TextureRect" parent="Stats/HBoxContainer/Ads"]
 layout_mode = 1
@@ -525,10 +525,10 @@ grow_horizontal = 2
 grow_vertical = 2
 theme_override_styles/panel = SubResource("StyleBoxEmpty_vvg7x")
 
-[node name="Cards" type="TabBar" parent="MainPanel/TabContainer"]
+[node name="k_cards" type="TabBar" parent="MainPanel/TabContainer"]
 layout_mode = 2
 
-[node name="ScrollContainer" type="ScrollContainer" parent="MainPanel/TabContainer/Cards"]
+[node name="ScrollContainer" type="ScrollContainer" parent="MainPanel/TabContainer/k_cards"]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -537,60 +537,60 @@ offset_top = 16.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="VBoxContainer" type="VBoxContainer" parent="MainPanel/TabContainer/Cards/ScrollContainer"]
+[node name="VBoxContainer" type="VBoxContainer" parent="MainPanel/TabContainer/k_cards/ScrollContainer"]
 layout_mode = 2
 size_flags_horizontal = 3
 theme_override_constants/separation = 32
 alignment = 1
 
-[node name="Gold" type="VBoxContainer" parent="MainPanel/TabContainer/Cards/ScrollContainer/VBoxContainer"]
+[node name="Gold" type="VBoxContainer" parent="MainPanel/TabContainer/k_cards/ScrollContainer/VBoxContainer"]
 unique_name_in_owner = true
 layout_mode = 2
 
-[node name="Rarity" type="Label" parent="MainPanel/TabContainer/Cards/ScrollContainer/VBoxContainer/Gold"]
+[node name="Rarity" type="Label" parent="MainPanel/TabContainer/k_cards/ScrollContainer/VBoxContainer/Gold"]
 layout_mode = 2
 text = "Gold Cards"
 label_settings = SubResource("LabelSettings_6djxe")
 horizontal_alignment = 1
 
-[node name="HBoxContainer" type="HBoxContainer" parent="MainPanel/TabContainer/Cards/ScrollContainer/VBoxContainer/Gold"]
+[node name="HBoxContainer" type="HBoxContainer" parent="MainPanel/TabContainer/k_cards/ScrollContainer/VBoxContainer/Gold"]
 layout_mode = 2
 alignment = 1
 
-[node name="Rare" type="VBoxContainer" parent="MainPanel/TabContainer/Cards/ScrollContainer/VBoxContainer"]
+[node name="Rare" type="VBoxContainer" parent="MainPanel/TabContainer/k_cards/ScrollContainer/VBoxContainer"]
 unique_name_in_owner = true
 layout_mode = 2
 
-[node name="Rarity" type="Label" parent="MainPanel/TabContainer/Cards/ScrollContainer/VBoxContainer/Rare"]
+[node name="Rarity" type="Label" parent="MainPanel/TabContainer/k_cards/ScrollContainer/VBoxContainer/Rare"]
 layout_mode = 2
 text = "Rare Cards"
 label_settings = SubResource("LabelSettings_6djxe")
 horizontal_alignment = 1
 
-[node name="HBoxContainer" type="HBoxContainer" parent="MainPanel/TabContainer/Cards/ScrollContainer/VBoxContainer/Rare"]
+[node name="HBoxContainer" type="HBoxContainer" parent="MainPanel/TabContainer/k_cards/ScrollContainer/VBoxContainer/Rare"]
 layout_mode = 2
 alignment = 1
 
-[node name="Common" type="VBoxContainer" parent="MainPanel/TabContainer/Cards/ScrollContainer/VBoxContainer"]
+[node name="Common" type="VBoxContainer" parent="MainPanel/TabContainer/k_cards/ScrollContainer/VBoxContainer"]
 unique_name_in_owner = true
 layout_mode = 2
 
-[node name="Rarity" type="Label" parent="MainPanel/TabContainer/Cards/ScrollContainer/VBoxContainer/Common"]
+[node name="Rarity" type="Label" parent="MainPanel/TabContainer/k_cards/ScrollContainer/VBoxContainer/Common"]
 layout_mode = 2
 theme_override_fonts/font = ExtResource("5_1nov5")
 text = "Common Cards"
 label_settings = SubResource("LabelSettings_6djxe")
 horizontal_alignment = 1
 
-[node name="HBoxContainer" type="HBoxContainer" parent="MainPanel/TabContainer/Cards/ScrollContainer/VBoxContainer/Common"]
+[node name="HBoxContainer" type="HBoxContainer" parent="MainPanel/TabContainer/k_cards/ScrollContainer/VBoxContainer/Common"]
 layout_mode = 2
 alignment = 1
 
-[node name="Shop" type="TabBar" parent="MainPanel/TabContainer"]
+[node name="k_shop" type="TabBar" parent="MainPanel/TabContainer"]
 visible = false
 layout_mode = 2
 
-[node name="ScrollContainer" type="ScrollContainer" parent="MainPanel/TabContainer/Shop"]
+[node name="ScrollContainer" type="ScrollContainer" parent="MainPanel/TabContainer/k_shop"]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -603,92 +603,92 @@ grow_horizontal = 2
 grow_vertical = 2
 size_flags_stretch_ratio = 0.0
 
-[node name="VBoxContainer" type="VBoxContainer" parent="MainPanel/TabContainer/Shop/ScrollContainer"]
+[node name="VBoxContainer" type="VBoxContainer" parent="MainPanel/TabContainer/k_shop/ScrollContainer"]
 layout_mode = 2
 size_flags_horizontal = 3
 alignment = 1
 
-[node name="GemsBox" type="VBoxContainer" parent="MainPanel/TabContainer/Shop/ScrollContainer/VBoxContainer"]
+[node name="GemsBox" type="VBoxContainer" parent="MainPanel/TabContainer/k_shop/ScrollContainer/VBoxContainer"]
 layout_mode = 2
 
-[node name="Label" type="Label" parent="MainPanel/TabContainer/Shop/ScrollContainer/VBoxContainer/GemsBox"]
+[node name="Label" type="Label" parent="MainPanel/TabContainer/k_shop/ScrollContainer/VBoxContainer/GemsBox"]
 custom_minimum_size = Vector2(100, 0)
 layout_mode = 2
 size_flags_horizontal = 4
 text = "Gems"
 horizontal_alignment = 1
 
-[node name="CenterContainer" type="CenterContainer" parent="MainPanel/TabContainer/Shop/ScrollContainer/VBoxContainer/GemsBox"]
+[node name="CenterContainer" type="CenterContainer" parent="MainPanel/TabContainer/k_shop/ScrollContainer/VBoxContainer/GemsBox"]
 layout_mode = 2
 
-[node name="HBoxContainer" type="GridContainer" parent="MainPanel/TabContainer/Shop/ScrollContainer/VBoxContainer/GemsBox/CenterContainer"]
+[node name="HBoxContainer" type="GridContainer" parent="MainPanel/TabContainer/k_shop/ScrollContainer/VBoxContainer/GemsBox/CenterContainer"]
 layout_mode = 2
 columns = 3
 
-[node name="GemShopDisplay" parent="MainPanel/TabContainer/Shop/ScrollContainer/VBoxContainer/GemsBox/CenterContainer/HBoxContainer" instance=ExtResource("16_3bcop")]
+[node name="GemShopDisplay" parent="MainPanel/TabContainer/k_shop/ScrollContainer/VBoxContainer/GemsBox/CenterContainer/HBoxContainer" instance=ExtResource("16_3bcop")]
 layout_mode = 2
 item_name = "Few Gems"
 id = "gem_pack_1"
 price = 0.99
 
-[node name="GemShopDisplay2" parent="MainPanel/TabContainer/Shop/ScrollContainer/VBoxContainer/GemsBox/CenterContainer/HBoxContainer" instance=ExtResource("16_3bcop")]
+[node name="GemShopDisplay2" parent="MainPanel/TabContainer/k_shop/ScrollContainer/VBoxContainer/GemsBox/CenterContainer/HBoxContainer" instance=ExtResource("16_3bcop")]
 layout_mode = 2
 item_name = "Many Gems"
 id = "gem_pack_2"
 price = 4.99
 
-[node name="GemShopDisplay3" parent="MainPanel/TabContainer/Shop/ScrollContainer/VBoxContainer/GemsBox/CenterContainer/HBoxContainer" instance=ExtResource("16_3bcop")]
+[node name="GemShopDisplay3" parent="MainPanel/TabContainer/k_shop/ScrollContainer/VBoxContainer/GemsBox/CenterContainer/HBoxContainer" instance=ExtResource("16_3bcop")]
 layout_mode = 2
 item_name = "Bag of Gems"
 id = "gem_pack_3"
 price = 9.99
 
-[node name="GoldBox" type="VBoxContainer" parent="MainPanel/TabContainer/Shop/ScrollContainer/VBoxContainer"]
+[node name="GoldBox" type="VBoxContainer" parent="MainPanel/TabContainer/k_shop/ScrollContainer/VBoxContainer"]
 layout_mode = 2
 
-[node name="Label" type="Label" parent="MainPanel/TabContainer/Shop/ScrollContainer/VBoxContainer/GoldBox"]
+[node name="Label" type="Label" parent="MainPanel/TabContainer/k_shop/ScrollContainer/VBoxContainer/GoldBox"]
 custom_minimum_size = Vector2(100, 0)
 layout_mode = 2
 size_flags_horizontal = 4
 text = "Gold"
 horizontal_alignment = 1
 
-[node name="CenterContainer" type="CenterContainer" parent="MainPanel/TabContainer/Shop/ScrollContainer/VBoxContainer/GoldBox"]
+[node name="CenterContainer" type="CenterContainer" parent="MainPanel/TabContainer/k_shop/ScrollContainer/VBoxContainer/GoldBox"]
 layout_mode = 2
 
-[node name="HBoxContainer" type="GridContainer" parent="MainPanel/TabContainer/Shop/ScrollContainer/VBoxContainer/GoldBox/CenterContainer"]
+[node name="HBoxContainer" type="GridContainer" parent="MainPanel/TabContainer/k_shop/ScrollContainer/VBoxContainer/GoldBox/CenterContainer"]
 layout_mode = 2
 columns = 5
 
-[node name="GoldShopDisplay" parent="MainPanel/TabContainer/Shop/ScrollContainer/VBoxContainer/GoldBox/CenterContainer/HBoxContainer" instance=ExtResource("17_v7vke")]
+[node name="GoldShopDisplay" parent="MainPanel/TabContainer/k_shop/ScrollContainer/VBoxContainer/GoldBox/CenterContainer/HBoxContainer" instance=ExtResource("17_v7vke")]
 layout_mode = 2
 
-[node name="Panel2" type="Panel" parent="MainPanel/TabContainer/Shop/ScrollContainer/VBoxContainer/GoldBox/CenterContainer/HBoxContainer"]
+[node name="Panel2" type="Panel" parent="MainPanel/TabContainer/k_shop/ScrollContainer/VBoxContainer/GoldBox/CenterContainer/HBoxContainer"]
 custom_minimum_size = Vector2(86, 98)
 layout_mode = 2
 
-[node name="Panel3" type="Panel" parent="MainPanel/TabContainer/Shop/ScrollContainer/VBoxContainer/GoldBox/CenterContainer/HBoxContainer"]
+[node name="Panel3" type="Panel" parent="MainPanel/TabContainer/k_shop/ScrollContainer/VBoxContainer/GoldBox/CenterContainer/HBoxContainer"]
 custom_minimum_size = Vector2(86, 98)
 layout_mode = 2
 
-[node name="CardsBox" type="VBoxContainer" parent="MainPanel/TabContainer/Shop/ScrollContainer/VBoxContainer"]
+[node name="CardsBox" type="VBoxContainer" parent="MainPanel/TabContainer/k_shop/ScrollContainer/VBoxContainer"]
 layout_mode = 2
 
-[node name="Label" type="Label" parent="MainPanel/TabContainer/Shop/ScrollContainer/VBoxContainer/CardsBox"]
+[node name="Label" type="Label" parent="MainPanel/TabContainer/k_shop/ScrollContainer/VBoxContainer/CardsBox"]
 custom_minimum_size = Vector2(100, 0)
 layout_mode = 2
 size_flags_horizontal = 4
 text = "Cards"
 horizontal_alignment = 1
 
-[node name="CenterContainer" type="CenterContainer" parent="MainPanel/TabContainer/Shop/ScrollContainer/VBoxContainer/CardsBox"]
+[node name="CenterContainer" type="CenterContainer" parent="MainPanel/TabContainer/k_shop/ScrollContainer/VBoxContainer/CardsBox"]
 layout_mode = 2
 
-[node name="HBoxContainer" type="GridContainer" parent="MainPanel/TabContainer/Shop/ScrollContainer/VBoxContainer/CardsBox/CenterContainer"]
+[node name="HBoxContainer" type="GridContainer" parent="MainPanel/TabContainer/k_shop/ScrollContainer/VBoxContainer/CardsBox/CenterContainer"]
 layout_mode = 2
 columns = 5
 
-[node name="CardShopDisplay" parent="MainPanel/TabContainer/Shop/ScrollContainer/VBoxContainer/CardsBox/CenterContainer/HBoxContainer" instance=ExtResource("19_q5pqp")]
+[node name="CardShopDisplay" parent="MainPanel/TabContainer/k_shop/ScrollContainer/VBoxContainer/CardsBox/CenterContainer/HBoxContainer" instance=ExtResource("19_q5pqp")]
 layout_mode = 2
 item_name = "Lucky Draw"
 id = "lucky"
@@ -697,7 +697,7 @@ gold_perc = 10.0
 rare_perc = 40.0
 normal_perc = 50.0
 
-[node name="CardShopDisplay2" parent="MainPanel/TabContainer/Shop/ScrollContainer/VBoxContainer/CardsBox/CenterContainer/HBoxContainer" instance=ExtResource("19_q5pqp")]
+[node name="CardShopDisplay2" parent="MainPanel/TabContainer/k_shop/ScrollContainer/VBoxContainer/CardsBox/CenterContainer/HBoxContainer" instance=ExtResource("19_q5pqp")]
 layout_mode = 2
 item_name = "Clover Draw"
 id = "clover"
@@ -706,7 +706,7 @@ gold_perc = 5.0
 rare_perc = 25.0
 normal_perc = 70.0
 
-[node name="CardShopDisplay3" parent="MainPanel/TabContainer/Shop/ScrollContainer/VBoxContainer/CardsBox/CenterContainer/HBoxContainer" instance=ExtResource("19_q5pqp")]
+[node name="CardShopDisplay3" parent="MainPanel/TabContainer/k_shop/ScrollContainer/VBoxContainer/CardsBox/CenterContainer/HBoxContainer" instance=ExtResource("19_q5pqp")]
 layout_mode = 2
 item_name = "Normal Draw"
 id = "normal"
@@ -715,11 +715,11 @@ gold_perc = 2.0
 rare_perc = 8.0
 normal_perc = 90.0
 
-[node name="Finance" type="TabBar" parent="MainPanel/TabContainer"]
+[node name="k_finance" type="TabBar" parent="MainPanel/TabContainer"]
 visible = false
 layout_mode = 2
 
-[node name="CenterContainer" type="CenterContainer" parent="MainPanel/TabContainer/Finance"]
+[node name="CenterContainer" type="CenterContainer" parent="MainPanel/TabContainer/k_finance"]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -727,12 +727,12 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="Panel" type="Panel" parent="MainPanel/TabContainer/Finance/CenterContainer"]
+[node name="Panel" type="Panel" parent="MainPanel/TabContainer/k_finance/CenterContainer"]
 custom_minimum_size = Vector2(280, 180)
 layout_mode = 2
 theme_override_styles/panel = ExtResource("16_n0u60")
 
-[node name="VBoxContainer" type="VBoxContainer" parent="MainPanel/TabContainer/Finance/CenterContainer/Panel"]
+[node name="VBoxContainer" type="VBoxContainer" parent="MainPanel/TabContainer/k_finance/CenterContainer/Panel"]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -742,20 +742,20 @@ grow_vertical = 2
 theme_override_constants/separation = 32
 alignment = 1
 
-[node name="VBoxContainer" type="VBoxContainer" parent="MainPanel/TabContainer/Finance/CenterContainer/Panel/VBoxContainer"]
+[node name="VBoxContainer" type="VBoxContainer" parent="MainPanel/TabContainer/k_finance/CenterContainer/Panel/VBoxContainer"]
 layout_mode = 2
 
-[node name="Label" type="Label" parent="MainPanel/TabContainer/Finance/CenterContainer/Panel/VBoxContainer/VBoxContainer"]
+[node name="Label" type="Label" parent="MainPanel/TabContainer/k_finance/CenterContainer/Panel/VBoxContainer/VBoxContainer"]
 layout_mode = 2
 text = "---- Earn gold! ----"
 horizontal_alignment = 1
 
-[node name="Button" type="Button" parent="MainPanel/TabContainer/Finance/CenterContainer/Panel/VBoxContainer/VBoxContainer"]
+[node name="Button" type="Button" parent="MainPanel/TabContainer/k_finance/CenterContainer/Panel/VBoxContainer/VBoxContainer"]
 layout_mode = 2
 size_flags_horizontal = 4
 text = "Get +999M"
 
-[node name="TextureRect" type="TextureRect" parent="MainPanel/TabContainer/Finance/CenterContainer/Panel/VBoxContainer/VBoxContainer/Button"]
+[node name="TextureRect" type="TextureRect" parent="MainPanel/TabContainer/k_finance/CenterContainer/Panel/VBoxContainer/VBoxContainer/Button"]
 layout_mode = 1
 anchors_preset = 4
 anchor_top = 0.5
@@ -770,15 +770,15 @@ texture = ExtResource("14_tvh0c")
 expand_mode = 1
 stretch_mode = 5
 
-[node name="VBoxContainer2" type="VBoxContainer" parent="MainPanel/TabContainer/Finance/CenterContainer/Panel/VBoxContainer"]
+[node name="VBoxContainer2" type="VBoxContainer" parent="MainPanel/TabContainer/k_finance/CenterContainer/Panel/VBoxContainer"]
 layout_mode = 2
 
-[node name="Label" type="Label" parent="MainPanel/TabContainer/Finance/CenterContainer/Panel/VBoxContainer/VBoxContainer2"]
+[node name="Label" type="Label" parent="MainPanel/TabContainer/k_finance/CenterContainer/Panel/VBoxContainer/VBoxContainer2"]
 layout_mode = 2
 text = "---- Earn gems! ----"
 horizontal_alignment = 1
 
-[node name="Button" type="Button" parent="MainPanel/TabContainer/Finance/CenterContainer/Panel/VBoxContainer/VBoxContainer2"]
+[node name="Button" type="Button" parent="MainPanel/TabContainer/k_finance/CenterContainer/Panel/VBoxContainer/VBoxContainer2"]
 layout_mode = 2
 size_flags_horizontal = 4
 theme_override_styles/normal = ExtResource("11_sij21")
@@ -787,7 +787,7 @@ theme_override_styles/pressed = ExtResource("11_sij21")
 theme_override_styles/focus = ExtResource("11_sij21")
 text = "Get +999M"
 
-[node name="TextureRect" type="TextureRect" parent="MainPanel/TabContainer/Finance/CenterContainer/Panel/VBoxContainer/VBoxContainer2/Button"]
+[node name="TextureRect" type="TextureRect" parent="MainPanel/TabContainer/k_finance/CenterContainer/Panel/VBoxContainer/VBoxContainer2/Button"]
 layout_mode = 1
 anchors_preset = 4
 anchor_top = 0.5
@@ -802,11 +802,11 @@ texture = ExtResource("10_lc3bi")
 expand_mode = 1
 stretch_mode = 5
 
-[node name="Business" type="TabBar" parent="MainPanel/TabContainer"]
+[node name="k_business" type="TabBar" parent="MainPanel/TabContainer"]
 visible = false
 layout_mode = 2
 
-[node name="ScrollContainer" type="ScrollContainer" parent="MainPanel/TabContainer/Business"]
+[node name="ScrollContainer" type="ScrollContainer" parent="MainPanel/TabContainer/k_business"]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -818,7 +818,7 @@ offset_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="BusinessList" type="VBoxContainer" parent="MainPanel/TabContainer/Business/ScrollContainer"]
+[node name="BusinessList" type="VBoxContainer" parent="MainPanel/TabContainer/k_business/ScrollContainer"]
 unique_name_in_owner = true
 layout_mode = 2
 size_flags_horizontal = 3
