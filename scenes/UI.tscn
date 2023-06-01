@@ -507,6 +507,7 @@ expand_mode = 1
 stretch_mode = 5
 
 [node name="MainPanel" type="Panel" parent="."]
+visible = false
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -853,4 +854,6 @@ text = "Close"
 [connection signal="pressed" from="Stats/HBoxContainer/Cards" to="." method="_on_card_pressed" binds= [0]]
 [connection signal="pressed" from="Stats/HBoxContainer/Shop" to="." method="_on_card_pressed" binds= [1]]
 [connection signal="pressed" from="Stats/HBoxContainer/Ads" to="." method="_on_card_pressed" binds= [2]]
+[connection signal="pressed" from="MainPanel/TabContainer/k_finance/CenterContainer/Panel/VBoxContainer/VBoxContainer/GetGold" to="MainPanel" method="_on_get_gold_pressed"]
+[connection signal="pressed" from="MainPanel/TabContainer/k_finance/CenterContainer/Panel/VBoxContainer/VBoxContainer2/GetGem" to="MainPanel" method="_on_get_gem_pressed"]
 [connection signal="pressed" from="MainPanel/Close" to="MainPanel" method="_on_close_pressed"]

@@ -12,6 +12,8 @@ extends Panel
 func _ready():
 	ManagerGame.shop_unlocked.connect(on_shop_unlocked)
 	
+	MobileAds.rewarded_ad_loaded.connect(on_rewarded_ad_loaded)
+	
 	load_businesses()
 	load_cards()
 	load_ads_buttons()
@@ -73,5 +75,17 @@ func on_shop_unlocked(id):
 	hide()
 
 
+func on_rewarded_ad_loaded():
+	MobileAds.show_rewarded()
+
+
 func _on_close_pressed():
 	hide()
+
+
+func _on_get_gold_pressed():
+	MobileAds.load_rewarded()
+
+
+func _on_get_gem_pressed():
+	pass # Replace with function body.
