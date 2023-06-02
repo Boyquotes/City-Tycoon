@@ -73,6 +73,7 @@ func load_cards():
 
 
 func on_shop_unlocked(id):
+	load_businesses()
 	hide()
 
 
