@@ -11,6 +11,7 @@ extends Panel
 
 func _ready():
 	ManagerGame.shop_unlocked.connect(on_shop_unlocked)
+	ManagerGame.gold_changed.connect(on_gold_changed)
 	
 	MobileAds.rewarded_ad_loaded.connect(on_rewarded_ad_loaded)
 	MobileAds.user_earned_rewarded.connect(on_user_earned_rewarded)
@@ -70,6 +71,10 @@ func load_cards():
 		var display = load("res://actors/ui/CardDisplay.tscn").instantiate()
 		display.id = card
 		box.add_child(display)
+
+
+func on_gold_changed():
+	load_businesses()
 
 
 func on_shop_unlocked(id):
