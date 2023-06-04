@@ -1,0 +1,48 @@
+[gd_scene load_steps=5 format=3 uid="uid://mej8abwp7mc1"]
+
+[ext_resource type="Script" path="res://actors/objs/Building.gd" id="1_e67dd"]
+[ext_resource type="TileSet" uid="uid://ci18tmka1tiyd" path="res://reso/tileset.tres" id="2_xdnfm"]
+[ext_resource type="PackedScene" uid="uid://bks7cussp0sck" path="res://actors/components/Selectable.tscn" id="3_56jg0"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_rtyhv"]
+size = Vector2(98, 108)
+
+[node name="BuildingMeatShop" type="Node2D"]
+script = ExtResource("1_e67dd")
+id = "shop_meat"
+
+[node name="TileMap" type="TileMap" parent="."]
+tile_set = ExtResource("2_xdnfm")
+format = 2
+layer_0/name = "base"
+layer_0/tile_data = PackedInt32Array(-262144, 65537, 106, -196608, 65537, 107, -131072, 65537, 108, -65536, 65537, 109, -262143, 131073, 106, -196607, 131073, 107, -131071, 131073, 108, -65535, 131073, 109, -262142, 196609, 106, -196606, 196609, 107, -131070, 196609, 108, -65534, 196609, 109, -262141, 262145, 106, -196605, 262145, 107, -131069, 262145, 108, -65533, 262145, 109, -262140, 327681, 106, -196604, 327681, 107, -131068, 327681, 108, -65532, 327681, 109, -262139, 393217, 106, -196603, 393217, 107, -131067, 393217, 108, -65531, 393217, 109, -262138, 458753, 106, -196602, 458753, 107, -131066, 458753, 108, -65530, 458753, 109)
+layer_1/name = "base_top"
+layer_1/enabled = true
+layer_1/modulate = Color(1, 1, 1, 1)
+layer_1/y_sort_enabled = false
+layer_1/y_sort_origin = 0
+layer_1/z_index = 0
+layer_1/tile_data = PackedInt32Array(0, 720897, 135, 65536, 720897, 136, 131072, 720897, 137, -65535, 786433, 134, 1, 786433, 135, 65537, 786433, 136, 131073, 786433, 137, -65534, 851969, 134, 2, 851969, 135, 65538, 851969, 136, 131074, 851969, 137, -131069, 917505, 133, -65533, 917505, 134, 3, 917505, 135, 65539, 917505, 136, 131075, 917505, 137, -65532, 983041, 134, 4, 983041, 135, 65540, 983041, 136, 131076, 983041, 137, -65531, 1048577, 134, 5, 1048577, 135, 65541, 1048577, 136, 131077, 1048577, 137, 6, 1114113, 135, 65542, 1114113, 136, 131078, 1114113, 137, -131068, 983041, 133, -131071, 786433, 133, -131070, 851969, 133, -131067, 1048577, 133)
+layer_2/name = "top"
+layer_2/enabled = true
+layer_2/modulate = Color(1, 1, 1, 1)
+layer_2/y_sort_enabled = false
+layer_2/y_sort_origin = 0
+layer_2/z_index = 0
+layer_2/tile_data = PackedInt32Array(-589824, 655361, 100, -524288, 655361, 101, -458752, 655361, 102, -393216, 655361, 103, -327680, 655361, 104, -589823, 720897, 100, -524287, 720897, 101, -458751, 720897, 102, -393215, 720897, 103, -327679, 720897, 104, -589822, 786433, 100, -524286, 786433, 101, -458750, 786433, 102, -393214, 786433, 103, -327678, 786433, 104, -589821, 851969, 100, -524285, 851969, 101, -458749, 851969, 102, -393213, 851969, 103, -327677, 851969, 104, -589820, 917505, 100, -524284, 917505, 101, -458748, 917505, 102, -393212, 917505, 103, -327676, 917505, 104, -589819, 983041, 100, -524283, 983041, 101, -458747, 983041, 102, -393211, 983041, 103, -327675, 983041, 104, -589818, 1048577, 100, -524282, 1048577, 101, -458746, 1048577, 102, -393210, 1048577, 103, -327674, 1048577, 104, -655360, 655361, 99, -655359, 720897, 99, -655358, 786433, 99, -655357, 851969, 99, -655356, 917505, 99, -655355, 983041, 99, -655354, 1048577, 99)
+layer_3/name = "top_deco"
+layer_3/enabled = true
+layer_3/modulate = Color(1, 1, 1, 1)
+layer_3/y_sort_enabled = false
+layer_3/y_sort_origin = 0
+layer_3/z_index = 0
+layer_3/tile_data = PackedInt32Array()
+
+[node name="Selectable" parent="." instance=ExtResource("3_56jg0")]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Selectable"]
+modulate = Color(1, 1, 1, 0)
+position = Vector2(55, -14)
+shape = SubResource("RectangleShape2D_rtyhv")
+
+[editable path="Selectable"]
